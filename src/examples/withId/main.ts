@@ -1,5 +1,6 @@
 import { bootstrap } from 'aurelia-bootstrapper';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
+import "aurelia-loader-webpack";
 
 //
 // bootstrap Aurelia

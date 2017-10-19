@@ -9,7 +9,7 @@ export class App {
     public vm: ReduxApp<AppViewModel>;
 
     constructor() {
-        ReduxApp.options.logLevel = LogLevel.Verbose;
+        ReduxApp.options.logLevel = LogLevel.Debug;
         this.vm = new ReduxApp(new AppViewModel(), devToolsEnhancer(undefined));
     }
 }

@@ -6,9 +6,9 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
     entry: { 
-        main: ['./src/examples/main.ts', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:80'],
-        counters: ['./src/examples/counters/main.ts', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:80'],
-        //withId: './src/examples/withId/main.ts'
+        main: './src/examples/main.ts',
+        counters: './src/examples/counters/main.ts',
+        withId: './src/examples/withId/main.ts'
     },
     devServer: {
         port: 80,
@@ -43,27 +43,8 @@ module.exports = {
             inject: true,
             minify: false
         }),
-        new HtmlWebpackPlugin({
-            chunks: ['main'],
-            filename: 'main/index.html',
-            template: 'src/examples/index.html',
-            inject: true,
-            minify: false
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['counters'],
-            filename: 'counters/index.html',
-            template: 'src/examples/counters/index.html',
-            inject: true,
-            minify: false
-        }),
-        // new HtmlWebpackPlugin({
-        //     chunks: ['withId'],
-        //     filename: 'index.html',
-        //     template: 'src/examples/withId/index.html',
-        //     inject: true,
-        //     minify: false
-        // }),
+        htmlPluginForBundle('counters'),
+        htmlPluginForBundle('withId'),
         new webpack.HotModuleReplacementPlugin(),
         new ProgressBarPlugin({
             clear: true
@@ -71,3 +52,13 @@ module.exports = {
     ],
     // stats: "minimal"
 };
+
+function htmlPluginForBundle(name) {
+    return new HtmlWebpackPlugin({
+        chunks: [name],
+        filename: name + '/index.html',
+        template: 'src/examples/' + name + '/index.html',
+        inject: true,
+        minify: false
+    });
+}

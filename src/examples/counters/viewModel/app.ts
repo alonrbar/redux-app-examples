@@ -5,7 +5,6 @@ import { CounterComponent } from './counter';
 export class App {
     public message = "redux-app";
     
-    @withId(5)
     public counter1 = new CounterComponent();    
     public counter2 = new CounterComponent();
 
