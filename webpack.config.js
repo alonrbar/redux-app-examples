@@ -5,7 +5,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
-    entry: ['./src/examples/counters/main.ts'],
+    entry: { 
+        main: ['./src/examples/main.ts', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:80'],
+        counters: ['./src/examples/counters/main.ts', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:80'],
+        //withId: './src/examples/withId/main.ts'
+    },
     devServer: {
         port: 80,
         hot: true,
@@ -14,7 +18,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     output: {
         path: path.resolve('./dist'),
-        filename: '[name].js',
+        filename: '[name]/main.js',
         chunkFilename: '[id].js',
         devtoolModuleFilenameTemplate: '[absolute-resource-path]',
         devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
@@ -33,11 +37,33 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({ debug: true }),
         new AureliaPlugin({ aureliaApp: undefined }),
         new HtmlWebpackPlugin({
+            chunks: ['main'],
             filename: 'index.html',
+            template: 'src/examples/index.html',
+            inject: true,
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['main'],
+            filename: 'main/index.html',
+            template: 'src/examples/index.html',
+            inject: true,
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['counters'],
+            filename: 'counters/index.html',
             template: 'src/examples/counters/index.html',
             inject: true,
             minify: false
         }),
+        // new HtmlWebpackPlugin({
+        //     chunks: ['withId'],
+        //     filename: 'index.html',
+        //     template: 'src/examples/withId/index.html',
+        //     inject: true,
+        //     minify: false
+        // }),
         new webpack.HotModuleReplacementPlugin(),
         new ProgressBarPlugin({
             clear: true
