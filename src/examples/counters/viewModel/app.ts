@@ -1,4 +1,4 @@
-import { component } from 'lib';
+import { component } from 'redux-app';
 import { CounterComponent } from './counter';
 
 @component

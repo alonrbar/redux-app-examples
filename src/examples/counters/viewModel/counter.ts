@@ -1,5 +1,5 @@
-import { Counter } from 'examples/counters/model/counter';
-import { component } from 'lib';
+import { component } from 'redux-app';
+import { Counter } from '../model/counter';
 
 @component
 export class CounterComponent {
