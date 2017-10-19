@@ -8,6 +8,7 @@ module.exports = {
     entry: { 
         main: './src/examples/main.ts',
         counters: './src/examples/counters/main.ts',
+        sequence: './src/examples/sequence/main.ts',
         withId: './src/examples/withId/main.ts'
     },
     devServer: {
@@ -44,6 +45,7 @@ module.exports = {
             minify: false
         }),
         htmlPluginForBundle('counters'),
+        htmlPluginForBundle('sequence'),
         htmlPluginForBundle('withId'),
         new webpack.HotModuleReplacementPlugin(),
         new ProgressBarPlugin({

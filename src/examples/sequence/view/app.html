@@ -1,0 +1,17 @@
+<template>
+    
+    <h1>${vm.root.title}</h1>
+    
+    <h3>the new stuff</h3>    
+    <p>${vm.root.status}</p>
+    <button click.delegate="vm.root.fetchImage()">Suprise me!</button>
+    <button click.delegate="vm.root.doNothing()">I do nothing...</button>
+    <br>
+    <br>
+    <img src.bind="vm.root.imageUrl" if.bind="vm.root.imageUrl">
+
+    <h3>old school counter</h3>
+    <p>value: ${vm.root.counter}</p>
+    <button click.delegate="vm.root.increment()">Increment?</button>    
+
+</template>

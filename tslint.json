@@ -38,7 +38,7 @@
         }
       ],
       "no-console": [
-        true
+        false
       ],
       "no-empty-interface": false,
       "no-string-literal": false,

@@ -12,7 +12,7 @@
   "dependencies": {
     "aurelia-bootstrapper": "^2.1.1",
     "aurelia-framework": "^1.1.5",
-    "redux-app": "^1.0.2",
+    "redux-app": "^1.2.0",
     "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {

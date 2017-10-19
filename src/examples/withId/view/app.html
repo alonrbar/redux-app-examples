@@ -1,11 +1,11 @@
 <template>
     <h1>${vm.root.message}</h1>
     <p>counter 1 - ID = 8 (in sync with counter 3)</p>
-    <counter value.bind="vm.root.counter1.value" increment.bind="vm.root.counter1.increment"></counter>
+    <counter counter.one-way="vm.root.counter1"></counter>
     <p>counter 2 - ID is auto-generated</p>
-    <counter value.bind="vm.root.counter2.value" increment.bind="vm.root.counter2.increment"></counter>
+    <counter counter.one-way="vm.root.counter2"></counter>
     <p>counter 3 - ID = 8 (in sync with counter 1)</p>
-    <counter value.bind="vm.root.counter3.value" increment.bind="vm.root.counter3.increment"></counter>
+    <counter counter.one-way="vm.root.counter3"></counter>
     <p>counter 4 - ID is auto-generated</p>
-    <counter value.bind="vm.root.counter4.value" increment.bind="vm.root.counter4.increment"></counter>
+    <counter counter.one-way="vm.root.counter4"></counter>
 </template>
