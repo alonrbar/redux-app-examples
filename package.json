@@ -1,7 +1,19 @@
 {
   "name": "redux-app-examples",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Example applications with aurelia and redux-app",
+  "keywords": [
+    "redux-app",
+    "example",
+    "redux",
+    "typescript",
+    "dry",
+    "reducer",
+    "actions",
+    "aurelia",
+    "angular",
+    "plugin"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --watch",
