@@ -1,6 +1,6 @@
 {
   "name": "redux-app-examples",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Example applications with aurelia and redux-app",
   "keywords": [
     "redux-app",
@@ -14,6 +14,14 @@
     "angular",
     "plugin"
   ],
+  "homepage": "https://github.com/alonrbar/redux-app-examples",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alonrbar/redux-app-examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alonrbar/redux-app-examples/issues"
+  },
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --watch",
