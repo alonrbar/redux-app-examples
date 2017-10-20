@@ -3,7 +3,8 @@ import { CounterComponent } from './counter';
 
 @component
 export class App {
-    public message = "redux-app";
+    public title = "counters";
+    public subtitle = "a basic example";
     
     public counter1 = new CounterComponent();    
     public counter2 = new CounterComponent();

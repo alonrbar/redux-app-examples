@@ -3,7 +3,8 @@ import { CounterComponent } from './counter';
 
 @component
 export class App {
-    public message = "redux-app - withID";
+    public title = "counters with identity";
+    public subtitle = "using the withId decorator, a \"mini ORM\" feature";
     
     @withId(8)
     public counter1 = new CounterComponent();

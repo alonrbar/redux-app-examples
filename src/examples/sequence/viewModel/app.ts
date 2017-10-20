@@ -2,7 +2,8 @@ import { component, noDispatch, sequence, withId } from 'redux-app';
 
 @component
 export class App {
-    public title = "redux-app - sequence";
+    public title = "async dogs";
+    public subtitle = "using the sequence decorator, an async pattern that does not require thunks";
 
     public status = 'click the button...';
     public imageUrl: string = null;
@@ -27,7 +28,7 @@ export class App {
         setTimeout(() => {
             this.updateImageUrl(responseBody.message);
             this.setStatus('walla!');
-        }, 3000);
+        }, 2000);
     }
 
     @noDispatch
