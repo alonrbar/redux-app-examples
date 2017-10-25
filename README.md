@@ -5,9 +5,13 @@ Example applications with [aurelia](http://aurelia.io/) and [redux-app](https://
 ### Installtion
 
 ```
-npm install redux-app-examples
+mkdir redux-app-examples
+cd redux-app-examples
+git init
+git pull https://github.com/alonrbar/redux-app-examples
+npm install
 ```
 
 ### Run the examples
 
-Run `npm start` and open `localhost` on your browser.
+After installation run `npm start` and open `localhost` on your browser.
