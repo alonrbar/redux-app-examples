@@ -1,3 +1,4 @@
+require('core-js/fn/reflect');
 import { bootstrap } from 'aurelia-bootstrapper';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import 'aurelia-loader-webpack';
@@ -10,7 +11,8 @@ import { App } from '../todo-view-model/app';
 //
 
 ReduxApp.options.logLevel = LogLevel.Debug;
-ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
+const app = ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
+app.root.todoList.addTodo('hello');
 
 //
 // bootstrap Aurelia

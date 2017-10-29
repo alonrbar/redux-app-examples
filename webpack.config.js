@@ -37,7 +37,7 @@ module.exports = {
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({ debug: true }),
-        new AureliaPlugin({ aureliaApp: undefined }),
+        new AureliaPlugin({ aureliaApp: undefined, features: { polyfills: "none" } }),
         new HtmlWebpackPlugin({
             chunks: ['main'],
             filename: 'index.html',
