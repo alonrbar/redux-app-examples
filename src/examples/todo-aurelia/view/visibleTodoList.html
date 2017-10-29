@@ -1,12 +1,4 @@
 <template>    
-    <br>
-    <h4 click.delegate="doSomething()">todo list</h4>
-    <ul>
-        <li repeat.for="todo of fakeList.todos">${todo.text}</li>
-    </ul>
-
-    <br>
-    <h4>todo list - real</h4>
     <ul>
         <li repeat.for="todo of todoList.todos">${todo.text}</li>
     </ul>

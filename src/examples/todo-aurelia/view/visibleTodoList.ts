@@ -8,10 +8,6 @@ export class VisibleTodoListView {
     @connect
     public todoList: TodoList;
 
-    public fakeList = {
-        todos: [{ text: 'some' }]
-    };
-
     @connect
     public visibilityFilter: VisibilityFilterValue;
 
@@ -27,9 +23,5 @@ export class VisibleTodoListView {
             default:
                 throw new Error('Unknown filter: ' + this.visibilityFilter.value);
         }
-    }
-
-    public doSomething() {
-        this.fakeList.todos.push({ text: 'new' });
     }
 }
