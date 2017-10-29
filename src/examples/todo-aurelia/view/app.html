@@ -1,0 +1,28 @@
+<template>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+
+                <!-- TITLE AND STUFF -->
+
+                <h2 class="card-title mb-3">redux-app-examples</h2>
+                <h6 class="card-subtitle text-muted mb-2">A set of example usages of
+                    <a href="https://github.com/alonrbar/redux-app">redux-app</a> with
+                    <a href="http://aurelia.io/">aurelia</a>
+                </h6>
+                <a href="/"><i><small>back to main menu</small></i></a>
+                <br><br>
+                <h4><i>${vm.root.title}</i></h4>
+                <h4><small class="text-muted">${vm.root.subtitle}</small></h4>
+                
+                <!-- EXAMPLE CONTENT STARTS HERE -->
+
+                <div>
+                    <add-todo></add-todo>
+                    <visible-todo-list></visible-todo-list>
+                    <todo-list-footer></todo-list-footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
