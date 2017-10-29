@@ -1,12 +1,10 @@
-import { customElement } from 'aurelia-framework';
-import { TodoList } from '../../todo-view-model/todoList';
-import { connect } from 'redux-app';
+import { bindable, customElement } from 'aurelia-framework';
 
 @customElement('add-todo')
-export class AddTodo {
+export class AddTodoView {
     
     public text: string;
-
-    @connect
-    private todoList: TodoList;
+    
+    @bindable 
+    public addTodo: (text: string) => void;
 }

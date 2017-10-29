@@ -1,0 +1,9 @@
+<template click.delegate="log()">
+    <h1>${visibilityFilter.value}</h1>
+    <p>
+        ${JSON.stringify(todoList)}
+    </p>
+    <ul>
+        <li repeat.for="todo of todoList.todos">${todo.text}</li>
+    </ul>
+</template>

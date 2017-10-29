@@ -1,5 +1,5 @@
 <template>
-    <form submit.delegate="todoList.addTodo(text)">
+    <form submit.delegate="addTodo({ text })">
         <input value.bind="text" />
         <button type="submit">Add Todo</button>
     </form>

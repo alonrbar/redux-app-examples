@@ -1,11 +1,10 @@
 import { component } from 'redux-app';
 import { Todo } from './todo';
-import { VisibilityFilter } from './visibilityFilter';
 
 @component
 export class TodoList {
 
-    public todos: Todo[] = [];    
+    public todos: Todo[] = [];
 
     public addTodo(text: string): void {
         this.todos = this.todos.concat([new Todo(text)]);
