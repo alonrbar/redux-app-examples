@@ -1,4 +1,3 @@
 /.tmp/
-/.vscode/symbols.json
 /node_modules
 npm-debug.log
