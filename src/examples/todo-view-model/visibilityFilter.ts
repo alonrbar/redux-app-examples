@@ -1,9 +1,9 @@
 import { component } from 'redux-app';
 
 export enum VisibilityFilter {
-    ShowAll,
-    ShowCompleted,
-    ShowActive
+    ShowAll = 'SHOW_ALL',    
+    ShowActive = 'SHOW_ACTIVE',
+    ShowCompleted = 'SHOW_COMPLETED'
 }
 
 @component
@@ -15,7 +15,7 @@ export class VisibilityFilterValue {
         this.value = value;
     }
 
-    public changeValue(newValue: VisibilityFilter): void {
+    public setValue(newValue: VisibilityFilter): void {
         this.value = newValue;
     }
 }

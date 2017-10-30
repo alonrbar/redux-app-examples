@@ -1,29 +1,14 @@
 <template>
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-body">
+    <require from="../../example-frame.html"></require>
 
-                <!-- TITLE AND STUFF -->
+    <example-frame title.one-time="vm.root.title" subtitle.one-time="vm.root.subtitle">
 
-                <h2 class="card-title mb-3">redux-app-examples</h2>
-                <h6 class="card-subtitle text-muted mb-2">A set of example usages of
-                    <a href="https://github.com/alonrbar/redux-app">redux-app</a> with
-                    <a href="http://aurelia.io/">aurelia</a>
-                </h6>
-                <a href="/"><i><small>back to main menu</small></i></a>
-                <br><br>
-                <h4><i>${vm.root.title}</i></h4>
-                <h4><small class="text-muted">${vm.root.subtitle}</small></h4>
-                
-                <!-- EXAMPLE CONTENT STARTS HERE -->
-
-                <div class="row w-50">
-                    <counter class="w-100 m-3" counter.one-way="vm.root.counter1" title="counter 1 - ID = 8 (in sync with counter 3)"></counter>
-                    <counter class="w-100 m-3" counter.one-way="vm.root.counter2" title="counter 2 - ID is auto-generated"></counter>
-                    <counter class="w-100 m-3" counter.one-way="vm.root.counter3" title="counter 3 - ID = 8 (in sync with counter 1)"></counter>
-                    <counter class="w-100 m-3" counter.one-way="vm.root.counter4" title="counter 4 - ID is auto-generated"></counter>
-                </div>
-            </div>
+        <div class="row w-50">
+            <counter class="w-100 m-3" counter.one-way="vm.root.counter1" title="counter 1 - ID = 8 (in sync with counter 3)"></counter>
+            <counter class="w-100 m-3" counter.one-way="vm.root.counter2" title="counter 2 - ID is auto-generated"></counter>
+            <counter class="w-100 m-3" counter.one-way="vm.root.counter3" title="counter 3 - ID = 8 (in sync with counter 1)"></counter>
+            <counter class="w-100 m-3" counter.one-way="vm.root.counter4" title="counter 4 - ID is auto-generated"></counter>
         </div>
-    </div>
+        
+    </example-frame>
 </template>

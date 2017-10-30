@@ -1,0 +1,9 @@
+<template>
+    <require from="./app-link.html"></require> <!-- can't use the name 'link' as it is already an acceptable tag in html... -->
+    <p>
+        Show:
+        <app-link text="All" active.bind="filter.value == 'SHOW_ALL'" on-click.call="filter.setValue('SHOW_ALL')"></app-link>,
+        <app-link text="Active" active.bind="filter.value == 'SHOW_ACTIVE'" on-click.call="filter.setValue('SHOW_ACTIVE')"></app-link>,
+        <app-link text="Completed" active.bind="filter.value == 'SHOW_COMPLETED'" on-click.call="filter.setValue('SHOW_COMPLETED')"></app-link>
+    </p>
+</template>

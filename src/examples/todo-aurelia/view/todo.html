@@ -1,9 +1,5 @@
-<template>
-    <div class="card">
-        <div class="card-body">
-            <h4 if.bind="title" class="card-title mb-4">${title}</h4>
-            <h3>${counter.value}</h3>
-            <button click.delegate="counter.increment()">Increment</button>
-        </div>
-    </div>
+<template bindable="todo, onClick">
+    <li click.delegate="onClick({ id: todo.id })" style="user-select: none">
+        <span css.bind="todo.completed ? 'text-decoration: line-through' : ''">${todo.text}</span>
+    </li>
 </template>

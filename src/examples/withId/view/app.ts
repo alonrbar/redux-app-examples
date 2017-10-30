@@ -10,6 +10,6 @@ export class App {
 
     constructor() {
         ReduxApp.options.logLevel = LogLevel.Debug;
-        this.vm = new ReduxApp(new AppViewModel(), devToolsEnhancer(undefined));
+        this.vm = new ReduxApp(new AppViewModel(), undefined, new AppViewModel(), devToolsEnhancer(undefined));
     }
 }

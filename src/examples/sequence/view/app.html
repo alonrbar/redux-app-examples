@@ -1,42 +1,25 @@
 <template>
-    <div class="container mt-5">
-        <div class="card">
+    <require from="../../example-frame.html"></require>
+
+    <example-frame title.one-time="vm.root.title" subtitle.one-time="vm.root.subtitle">
+
+        <div class="card w-50">
             <div class="card-body">
+                <h3>the new stuff</h3>
+                <p>${vm.root.status}</p>
+                <button click.delegate="vm.root.fetchImage()">Suprise me!</button>
+                <button click.delegate="vm.root.doNothing()">I do nothing...</button>
+            </div>
+            <img if.bind="vm.root.imageUrl" class="card-img-bottom" src.bind="vm.root.imageUrl">
+        </div>
 
-                <!-- TITLE AND STUFF -->
-
-                <h2 class="card-title mb-3">redux-app-examples</h2>
-                <h6 class="card-subtitle text-muted mb-2">A set of example usages of
-                    <a href="https://github.com/alonrbar/redux-app">redux-app</a> with
-                    <a href="http://aurelia.io/">aurelia</a>
-                </h6>
-                <a href="/"><i><small>back to main menu</small></i></a>
-                <br><br>
-                <h4><i>${vm.root.title}</i></h4>
-                <h4><small class="text-muted">${vm.root.subtitle}</small></h4>
-                <br>
-
-                <!-- EXAMPLE CONTENT STARTS HERE -->
-
-                <div class="card w-50">
-                    <div class="card-body">
-                        <h3>the new stuff</h3>
-                        <p>${vm.root.status}</p>
-                        <button click.delegate="vm.root.fetchImage()">Suprise me!</button>
-                        <button click.delegate="vm.root.doNothing()">I do nothing...</button>
-                    </div>
-                    <img if.bind="vm.root.imageUrl" class="card-img-bottom" src.bind="vm.root.imageUrl">
-                </div>
-
-                <div class="card w-50 mt-3">
-                    <div class="card-body">
-                        <h3>old school counter</h3>
-                        <p>value: ${vm.root.counter}</p>
-                        <button click.delegate="vm.root.increment()">Increment?</button>
-                    </div>
-                </div>
-
+        <div class="card w-50 mt-3">
+            <div class="card-body">
+                <h3>old school counter</h3>
+                <p>value: ${vm.root.counter}</p>
+                <button click.delegate="vm.root.increment()">Increment?</button>
             </div>
         </div>
-    </div>
+        
+    </example-frame>
 </template>

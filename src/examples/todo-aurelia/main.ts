@@ -12,7 +12,6 @@ import { App } from '../todo-view-model/app';
 
 ReduxApp.options.logLevel = LogLevel.Debug;
 const app = ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
-app.root.todoList.addTodo('hello');
 
 //
 // bootstrap Aurelia

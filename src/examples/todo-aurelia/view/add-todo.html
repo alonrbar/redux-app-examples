@@ -1,4 +1,4 @@
-<template>
+<template bindable="addTodo">
     <form submit.delegate="addTodo({ text })">
         <input value.bind="text" />
         <button type="submit">Add Todo</button>

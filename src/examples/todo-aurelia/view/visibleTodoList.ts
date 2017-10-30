@@ -1,4 +1,4 @@
-import { customElement, bindable, computedFrom, ObserverLocator, observable } from 'aurelia-framework';
+import { customElement, bindable, computedFrom, ObserverLocator, observable, viewResources, PLATFORM } from 'aurelia-framework';
 import { Todo, TodoList, VisibilityFilterValue, VisibilityFilter } from '../../todo-view-model';
 import { connect } from 'redux-app';
 
@@ -11,14 +11,14 @@ export class VisibleTodoListView {
     @connect
     public visibilityFilter: VisibilityFilterValue;
 
-    @computedFrom('todoList.todos.length', 'visibilityFilter.value')
+    @computedFrom('todoList.todos', 'visibilityFilter.value')
     public get visibleTodos(): Todo[] {
         switch (this.visibilityFilter.value) {
             case VisibilityFilter.ShowAll:
                 return this.todoList.todos;
-            case VisibilityFilter.ShowAll:
+            case VisibilityFilter.ShowCompleted:
                 return this.todoList.todos.filter(t => t.completed);
-            case VisibilityFilter.ShowAll:
+            case VisibilityFilter.ShowActive:
                 return this.todoList.todos.filter(t => !t.completed);
             default:
                 throw new Error('Unknown filter: ' + this.visibilityFilter.value);

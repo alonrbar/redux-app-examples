@@ -1,5 +1,6 @@
-<template>    
+<template>
+    <require from="./todo.html"></require>
     <ul>
-        <li repeat.for="todo of todoList.todos">${todo.text}</li>
+        <todo repeat.for="todo of visibleTodos" on-click.call="todoList.toggleTodo(id)" todo.bind="todo"></todo>
     </ul>
 </template>
