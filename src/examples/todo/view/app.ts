@@ -1,6 +1,6 @@
 import { PLATFORM, viewResources } from 'aurelia-framework';
-import { App as AppViewModel } from '../../todo-view-model/app';
 import { connect } from 'redux-app';
+import { App } from '../view-model/app';
 
 @viewResources(
     PLATFORM.moduleName('./footer'),
@@ -9,5 +9,5 @@ import { connect } from 'redux-app';
 export class AppView {
     
     @connect
-    public vm: AppViewModel;
+    public vm: App;
 }

@@ -1,6 +1,6 @@
 import { customElement } from 'aurelia-framework';
 import { connect } from 'redux-app';
-import { VisibilityFilterValue } from '../../todo-view-model/visibilityFilter';
+import { VisibilityFilterValue } from '../view-model/visibilityFilter';
 
 @customElement('app-footer')
 export class TodoListFooterView {

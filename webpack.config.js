@@ -10,7 +10,7 @@ module.exports = {
         counters: './src/examples/counters/main.ts',
         sequence: './src/examples/sequence/main.ts',
         withId: './src/examples/withId/main.ts',
-        "todo-aurelia": './src/examples/todo-aurelia/main.ts'
+        todo: './src/examples/todo/main.ts'
     },
     devServer: {
         port: 80,
@@ -48,7 +48,7 @@ module.exports = {
         htmlPluginForBundle('counters'),
         htmlPluginForBundle('sequence'),
         htmlPluginForBundle('withId'),
-        htmlPluginForBundle('todo-aurelia'),
+        htmlPluginForBundle('todo'),
         new webpack.HotModuleReplacementPlugin(),
         new ProgressBarPlugin({
             clear: true

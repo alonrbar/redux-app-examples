@@ -1,6 +1,6 @@
-import { customElement, bindable, computedFrom, ObserverLocator, observable, viewResources, PLATFORM } from 'aurelia-framework';
-import { Todo, TodoList, VisibilityFilterValue, VisibilityFilter } from '../../todo-view-model';
+import { computedFrom, customElement } from 'aurelia-framework';
 import { connect } from 'redux-app';
+import { Todo, TodoList, VisibilityFilter, VisibilityFilterValue } from '../view-model';
 
 @customElement('visible-todo-list')
 export class VisibleTodoListView {

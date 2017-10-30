@@ -4,7 +4,7 @@ import { Aurelia, PLATFORM } from 'aurelia-framework';
 import 'aurelia-loader-webpack';
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import { App } from '../todo-view-model/app';
+import { App } from './view-model/app';
 
 //
 // bootstrap the view-model
@@ -24,5 +24,5 @@ bootstrap((aurelia: Aurelia) => {
         .developmentLogging();
 
     aurelia.start()
-    .then(() => aurelia.setRoot(PLATFORM.moduleName('examples/todo-aurelia/view/app'), document.body));
+    .then(() => aurelia.setRoot(PLATFORM.moduleName('examples/todo/view/app'), document.body));
 });
