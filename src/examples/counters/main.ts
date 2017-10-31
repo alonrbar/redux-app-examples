@@ -1,4 +1,4 @@
-require('core-js/fn/reflect');
+import "reflect-metadata";
 import { bootstrap } from 'aurelia-bootstrapper';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import "aurelia-loader-webpack";
