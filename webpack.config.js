@@ -13,7 +13,7 @@ module.exports = {
         todo: './src/examples/todo/main.ts'
     },
     devServer: {
-        port: 80,
+        port: 3000,
         hot: true,
         // stats: "minimal"
     },
