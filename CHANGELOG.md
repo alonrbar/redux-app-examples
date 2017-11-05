@@ -1,5 +1,9 @@
 # Change Log
 
-## [1.1.2 - 2017-11-4](https://github.com/alonrbar/redux-app-examples/tree/v1.7.0)
+## 1.1.3 - 2017-11-5
+
+- Update package-lock.json file.
+
+## 1.1.2 - 2017-11-4
 
 - Update todo example.
