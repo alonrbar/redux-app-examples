@@ -3,7 +3,7 @@ import { connect } from 'redux-app';
 import { VisibilityFilterValue } from '../view-model';
 
 @customElement('app-footer')
-export class TodoListFooterView {
+export class AppFooterView {
 
     @connect
     public filter: VisibilityFilterValue;

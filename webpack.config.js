@@ -13,6 +13,7 @@ module.exports = {
         "aurelia/sequence": './src/examples/aurelia/sequence/main.ts',        
         "angular/withId": './src/examples/angular/withId/main.ts',
         "aurelia/withId": './src/examples/aurelia/withId/main.ts',
+        "angular/todo": './src/examples/angular/todo/main.ts',
         "aurelia/todo": './src/examples/aurelia/todo/main.ts'
     },
     devServer: {
@@ -55,7 +56,8 @@ module.exports = {
         htmlPluginForBundle('aurelia/sequence'),
         htmlPluginForBundle('angular/withId'),
         htmlPluginForBundle('aurelia/withId'),
-        htmlPluginForBundle('aurelia/todo'),        
+        htmlPluginForBundle('angular/todo'),
+        htmlPluginForBundle('aurelia/todo'),
         new ProgressBarPlugin({
             clear: true
         })

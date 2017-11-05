@@ -1,0 +1,5 @@
+<div>
+    <ul>
+        <todo *ngFor="let todo of vm.visibleTodos" (onTodoClick)="vm.toggleTodo($event)" [todo]="todo"></todo>
+    </ul>
+</div>
