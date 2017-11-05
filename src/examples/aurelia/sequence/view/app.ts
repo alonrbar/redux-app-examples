@@ -1,6 +1,6 @@
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import { App as AppViewModel } from '../viewModel/app';
+import { App as AppViewModel } from '../viewModel';
 
 export class App {
     

@@ -1,0 +1,9 @@
+<div>
+    <div class="card">
+        <div class="card-body">
+            <h4 *ngIf="title" class="card-title mb-4">{{title}}</h4>
+            <h3>{{counter.value}}</h3>
+            <button (click)="counter.increment()">Increment</button>
+        </div>
+    </div>
+</div>

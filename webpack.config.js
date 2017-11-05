@@ -6,10 +6,12 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
     entry: { 
-        main: './src/examples/main.ts',
-        "aurelia/counters": './src/examples/aurelia/counters/main.ts',
+        "main": './src/examples/main.ts',
         "angular/counters": './src/examples/angular/counters/main.ts',
-        "aurelia/sequence": './src/examples/aurelia/sequence/main.ts',
+        "aurelia/counters": './src/examples/aurelia/counters/main.ts',
+        "angular/sequence": './src/examples/angular/sequence/main.ts',
+        "aurelia/sequence": './src/examples/aurelia/sequence/main.ts',        
+        "angular/withId": './src/examples/angular/withId/main.ts',
         "aurelia/withId": './src/examples/aurelia/withId/main.ts',
         "aurelia/todo": './src/examples/aurelia/todo/main.ts'
     },
@@ -47,9 +49,11 @@ module.exports = {
             path.resolve('./src')
         ),
         htmlPluginForBundle('main'),
-        htmlPluginForBundle('aurelia/counters'),
         htmlPluginForBundle('angular/counters'),
+        htmlPluginForBundle('aurelia/counters'),
+        htmlPluginForBundle('angular/sequence'),
         htmlPluginForBundle('aurelia/sequence'),
+        htmlPluginForBundle('angular/withId'),
         htmlPluginForBundle('aurelia/withId'),
         htmlPluginForBundle('aurelia/todo'),        
         new ProgressBarPlugin({

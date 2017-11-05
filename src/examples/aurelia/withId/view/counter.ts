@@ -1,8 +1,8 @@
-import { CounterComponent } from '../viewModel/counter';
-import { customElement, bindable } from "aurelia-framework";
+import { bindable, customElement } from 'aurelia-framework';
+import { Counter } from '../viewModel';
 
 @customElement('counter')
 export class CounterElement {
     @bindable public title: string;
-    @bindable public counter: CounterComponent;
+    @bindable public counter: Counter;
 }

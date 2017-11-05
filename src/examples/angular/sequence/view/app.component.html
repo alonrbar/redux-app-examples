@@ -1,0 +1,24 @@
+<div>
+
+    <example-frame [title]="vm.root.title" [subtitle]="vm.root.subtitle">
+
+        <div class="card w-50">
+            <div class="card-body">
+                <h3>the new stuff</h3>
+                <p>{{vm.root.status}}</p>
+                <button (click)="vm.root.fetchImage()">Suprise me!</button>
+                <button (click)="vm.root.doNothing()">I do nothing...</button>
+            </div>
+            <img *ngIf="vm.root.imageUrl" class="card-img-bottom" [src]="vm.root.imageUrl">
+        </div>
+
+        <div class="card w-50 mt-3">
+            <div class="card-body">
+                <h3>old school counter</h3>
+                <p>value: {{vm.root.counter}}</p>
+                <button (click)="vm.root.increment()">Increment?</button>
+            </div>
+        </div>
+        
+    </example-frame>
+</div>
