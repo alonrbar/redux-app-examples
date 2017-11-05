@@ -10,12 +10,13 @@ module.exports = {
         counters: './src/examples/counters/main.ts',
         sequence: './src/examples/sequence/main.ts',
         withId: './src/examples/withId/main.ts',
-        todo: './src/examples/todo/main.ts'
+        todo: './src/examples/todo/main.ts',
+        "todo-angular": './src/examples/todo-angular/main.ts'
     },
     devServer: {
         port: 3000,
         hot: true,
-        // stats: "minimal"
+        stats: "minimal"
     },
     devtool: 'cheap-module-eval-source-map',
     output: {
@@ -27,7 +28,7 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /.ts$/, use: ['ts-loader', 'ts-nameof-loader'] },
+            { test: /.ts$/, use: ['ts-loader', 'angular2-template-loader', 'ts-nameof-loader'] },
             { test: /\.html$/, use: ['html-loader'] }
         ]
     },
@@ -37,7 +38,12 @@ module.exports = {
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({ debug: true }),
+        new webpack.HotModuleReplacementPlugin(),
         new AureliaPlugin({ aureliaApp: undefined, features: { polyfills: "none" } }),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core/,
+            path.resolve('./src')
+        ),
         new HtmlWebpackPlugin({
             chunks: ['main'],
             filename: 'index.html',
@@ -49,12 +55,11 @@ module.exports = {
         htmlPluginForBundle('sequence'),
         htmlPluginForBundle('withId'),
         htmlPluginForBundle('todo'),
-        new webpack.HotModuleReplacementPlugin(),
+        htmlPluginForBundle('todo-angular'),
         new ProgressBarPlugin({
             clear: true
         })
-    ],
-    // stats: "minimal"
+    ]
 };
 
 function htmlPluginForBundle(name) {
