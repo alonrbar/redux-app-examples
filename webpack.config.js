@@ -7,11 +7,11 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 module.exports = {
     entry: { 
         main: './src/examples/main.ts',
-        counters: './src/examples/counters/main.ts',
-        sequence: './src/examples/sequence/main.ts',
-        withId: './src/examples/withId/main.ts',
-        todo: './src/examples/todo/main.ts',
-        "todo-angular": './src/examples/todo-angular/main.ts'
+        "aurelia/counters": './src/examples/aurelia/counters/main.ts',
+        "angular/counters": './src/examples/angular/counters/main.ts',
+        "aurelia/sequence": './src/examples/aurelia/sequence/main.ts',
+        "aurelia/withId": './src/examples/aurelia/withId/main.ts',
+        "aurelia/todo": './src/examples/aurelia/todo/main.ts'
     },
     devServer: {
         port: 3000,
@@ -29,7 +29,9 @@ module.exports = {
     module: {
         rules: [
             { test: /.ts$/, use: ['ts-loader', 'angular2-template-loader', 'ts-nameof-loader'] },
-            { test: /\.html$/, use: ['html-loader'] }
+            { test: /\.html$/, use: ['html-loader'] },
+            { test: /(.png$|.gif$)/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] }
         ]
     },
     resolve: {
@@ -45,11 +47,11 @@ module.exports = {
             path.resolve('./src')
         ),
         htmlPluginForBundle('main'),
-        htmlPluginForBundle('counters'),
-        htmlPluginForBundle('sequence'),
-        htmlPluginForBundle('withId'),
-        htmlPluginForBundle('todo'),
-        htmlPluginForBundle('todo-angular'),
+        htmlPluginForBundle('aurelia/counters'),
+        htmlPluginForBundle('angular/counters'),
+        htmlPluginForBundle('aurelia/sequence'),
+        htmlPluginForBundle('aurelia/withId'),
+        htmlPluginForBundle('aurelia/todo'),        
         new ProgressBarPlugin({
             clear: true
         })

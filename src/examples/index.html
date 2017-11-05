@@ -12,40 +12,64 @@
     <div class="card">
       <div class="card-body">
         <h2 class="card-title mb-3">redux-app-examples</h2>
-        <h6 class="card-subtitle text-muted">A set of example usages of
-          <a href="https://github.com/alonrbar/redux-app">redux-app</a> with
-          <a href="http://aurelia.io/">aurelia</a>
+        <h6 class="card-subtitle text-muted">
+            examples of <a href="https://github.com/alonrbar/redux-app">redux-app</a> together with your favourite client side framework
         </h6>
         <br>
         <br>
-        <h5>Examples:</h5>
         <table class="table mt-3">
-          <tr>
-            <td>1</td>
-            <td>
-              <a href="./counters">counters - a basic example</a>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>
-              <a href="./withId">counters with identity - using the
-                <code>withId</code> decorator, a "mini ORM" feature</a>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>
-              <a href="./sequence">async dogs - using the
-                <code>sequence</code> decorator, an async pattern that does not require thunks</a>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>
-              <a href="./todo">todo - your familiar todo list example, this time with redux-app</a>
-            </td>
-          </tr>
+          <thead>
+            <th colspan="2">Example</th>
+            <th colspan="2">Framwork</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>counters - a basic example</td>
+              <td>
+                <a href="angular/counters"><img src="./res/angular-icon-1.svg" width="30" height="30" title="Angular" alt="Angular"></a>
+              </td>
+              <td>
+                <a href="aurelia/counters"><img src="./res/aurelia-icon-512x512.png" width="30" height="30" title="Aurelia" alt="Aurelia"></a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                counters with identity - using the
+                <code>withId</code> decorator, a "mini ORM" feature
+              </td>
+              <td>
+                <a href="angular/withId"><img src="./res/angular-icon-1.svg" width="30" height="30" title="Angular" alt="Angular"></a>
+              </td>
+              <td>
+                <a href="aurelia/withId"><img src="./res/aurelia-icon-512x512.png" width="30" height="30" title="Aurelia" alt="Aurelia"></a>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                async dogs - using the
+                <code>sequence</code> decorator, an async pattern that does not require thunks
+              </td>
+              <td>
+                <a href="angular/sequence"><img src="./res/angular-icon-1.svg" width="30" height="30" title="Angular" alt="Angular"></a>
+              </td>
+              <td>
+                <a href="aurelia/sequence"><img src="./res/aurelia-icon-512x512.png" width="30" height="30" title="Aurelia" alt="Aurelia"></a>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>todo - your familiar todo list example, this time with redux-app (leverages <code>connect</code> and <code>computed</code>)</td>
+              <td>
+                <a href="angular/todo"><img src="./res/angular-icon-1.svg" width="30" height="30" title="Angular" alt="Angular"></a>
+              </td>
+              <td>
+                <a href="aurelia/todo"><img src="./res/aurelia-icon-512x512.png" width="30" height="30" title="Aurelia" alt="Aurelia"></a>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
