@@ -10,7 +10,7 @@ import { AppModule } from './view/app.module';
 //
 
 ReduxApp.options.logLevel = LogLevel.Debug;
-const app = ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
+ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
 
 //
 // bootstrap angular

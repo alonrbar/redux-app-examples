@@ -1,4 +1,4 @@
-import { component, noDispatch, sequence, withId } from 'redux-app';
+import { component, noDispatch, sequence } from 'redux-app';
 
 @component
 export class App {

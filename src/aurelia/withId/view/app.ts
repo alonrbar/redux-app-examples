@@ -4,7 +4,7 @@ import { devToolsEnhancer } from 'redux-devtools-extension';
 import { App } from '../viewModel';
 
 @viewResources(PLATFORM.moduleName('./counter'))
-export class AppElement {
+export class AppView {
     
     public vm: ReduxApp<App>;
 

@@ -11,7 +11,7 @@ import { App } from './view-model/app';
 //
 
 ReduxApp.options.logLevel = LogLevel.Debug;
-const app = ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
+ReduxApp.createApp(new App(), devToolsEnhancer(undefined));
 
 //
 // bootstrap Aurelia

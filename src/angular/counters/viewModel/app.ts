@@ -1,4 +1,4 @@
-import { component, withId } from 'redux-app';
+import { component } from 'redux-app';
 import { Counter } from './counter';
 
 @component

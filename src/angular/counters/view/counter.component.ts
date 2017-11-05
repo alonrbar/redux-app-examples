@@ -1,5 +1,5 @@
-import { Counter } from "../viewModel/counter";
 import { Component, Input } from '@angular/core';
+import { Counter } from '../viewModel';
 
 @Component({
     selector: 'app-counter',

@@ -1,13 +1,13 @@
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import { App as AppViewModel } from '../viewModel';
+import { App } from '../viewModel';
 
-export class App {
+export class AppView {
     
-    public vm: ReduxApp<AppViewModel>;
+    public vm: ReduxApp<App>;
 
     constructor() {
         ReduxApp.options.logLevel = LogLevel.Debug;
-        this.vm = new ReduxApp(new AppViewModel(), devToolsEnhancer(undefined));
+        this.vm = new ReduxApp(new App(), devToolsEnhancer(undefined));
     }
 }
