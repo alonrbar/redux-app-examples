@@ -1,5 +1,4 @@
 import { component } from 'redux-app';
-import { Todo } from './todo';
 import { TodoList } from './todoList';
 import { VisibilityFilter, VisibilityFilterValue } from './visibilityFilter';
 import { VisibleTodoList } from './visibleTodoList';

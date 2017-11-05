@@ -6,15 +6,15 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
     entry: { 
-        "main": './src/examples/main.ts',
-        "angular/counters": './src/examples/angular/counters/main.ts',
-        "aurelia/counters": './src/examples/aurelia/counters/main.ts',
-        "angular/sequence": './src/examples/angular/sequence/main.ts',
-        "aurelia/sequence": './src/examples/aurelia/sequence/main.ts',        
-        "angular/withId": './src/examples/angular/withId/main.ts',
-        "aurelia/withId": './src/examples/aurelia/withId/main.ts',
-        "angular/todo": './src/examples/angular/todo/main.ts',
-        "aurelia/todo": './src/examples/aurelia/todo/main.ts'
+        "main": './src/main.ts',
+        "angular/counters": './src/angular/counters/main.ts',
+        "aurelia/counters": './src/aurelia/counters/main.ts',
+        "angular/sequence": './src/angular/sequence/main.ts',
+        "aurelia/sequence": './src/aurelia/sequence/main.ts',        
+        "angular/withId": './src/angular/withId/main.ts',
+        "aurelia/withId": './src/aurelia/withId/main.ts',
+        "angular/todo": './src/angular/todo/main.ts',
+        "aurelia/todo": './src/aurelia/todo/main.ts'
     },
     devServer: {
         port: 3000,
@@ -31,7 +31,7 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /.ts$/, use: ['ts-loader', 'angular2-template-loader', 'ts-nameof-loader'] },
+            { test: /.ts$/, use: ['ts-loader', 'angular2-template-loader'] },
             { test: /\.html$/, use: ['html-loader'] },
             { test: /(.png$|.gif$)/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] },
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] }
@@ -69,7 +69,7 @@ function htmlPluginForBundle(name) {
     return new HtmlWebpackPlugin({
         chunks: [name],
         filename: dir + 'index.html',
-        template: 'src/examples/' + dir + 'index.html',
+        template: 'src/' + dir + 'index.html',
         inject: true,
         minify: false
     });
