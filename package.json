@@ -1,6 +1,6 @@
 {
   "name": "redux-app-examples",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Example applications with aurelia and redux-app",
   "keywords": [
     "redux-app",

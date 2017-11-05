@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.2.0 - 2017-11-6
+## 1.2.1 - 2017-11-6
 
 - Add Angular examples.
 
