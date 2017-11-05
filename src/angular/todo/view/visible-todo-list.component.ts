@@ -12,7 +12,7 @@ export class VisibleTodoListComponent {
     public vm: VisibleTodoList;
 
     constructor(private ref: ChangeDetectorRef) {
-        // Workaround for time travel debugging in this component. Still trying to figure it out...
+        // Workaround for time travel debugging. Still trying to figure it out...
         setInterval(() => {
             this.ref.detectChanges();
         }, 100);
