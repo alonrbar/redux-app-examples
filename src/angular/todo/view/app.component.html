@@ -1,0 +1,14 @@
+<div>
+    <example-frame [title]="vm.title" [subtitle]="vm.subtitle">
+
+        <div class="card mt-5 w-50">
+            <div class="card-body">
+                <add-todo (onAddTodo)="vm.todoList.addTodo($event)"></add-todo>
+                <br>
+                <visible-todo-list></visible-todo-list>
+                <app-footer></app-footer>
+            </div>
+        </div>
+
+    </example-frame>
+</div>

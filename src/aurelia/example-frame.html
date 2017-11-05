@@ -1,0 +1,22 @@
+<template bindable="title, subtitle">
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+
+                <!-- TITLE AND STUFF -->
+                <h2 class="card-title mb-3">redux-app-examples</h2>
+                <h6 class="card-subtitle text-muted mb-2">
+                    examples of <a href="https://github.com/alonrbar/redux-app">redux-app</a> together with your favorite client side framework
+                </h6>
+                <a href="/"><i><small>back to main menu</small></i></a>
+                <br><br>
+                <h4><i>${title}</i></h4>
+                <h4><small class="text-muted">${subtitle}</small></h4>
+
+                <!-- EXAMPLE CONTENT GOES HERE -->
+                <slot></slot>
+
+            </div>
+        </div>
+    </div>
+</template>

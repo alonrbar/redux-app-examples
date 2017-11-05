@@ -1,0 +1,3 @@
+<li (click)="todoClick(todo.id)" style="user-select: none">
+    <span [style.text-decoration]="todo.completed ? 'line-through' : ''">{{todo.text}}</span>
+</li>

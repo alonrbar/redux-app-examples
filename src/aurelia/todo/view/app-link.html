@@ -1,0 +1,4 @@
+<template bindable="text, active, onClick">
+    <span if.bind="active">${text}</span>
+    <a if.bind="!active" href="#" click.delegate="onClick()">${text}</a>
+</template>

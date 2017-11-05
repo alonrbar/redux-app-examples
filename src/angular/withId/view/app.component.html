@@ -1,0 +1,13 @@
+<div>
+
+    <example-frame [title]="vm.root.title" [subtitle]="vm.root.subtitle">
+
+        <div class="row w-50">
+            <app-counter class="w-100 m-3" [counter]="vm.root.counter1" title="counter 1 - ID = 8 (in sync with counter 3)"></app-counter>
+            <app-counter class="w-100 m-3" [counter]="vm.root.counter2" title="counter 2 - ID is auto-generated"></app-counter>
+            <app-counter class="w-100 m-3" [counter]="vm.root.counter3" title="counter 3 - ID = 8 (in sync with counter 1)"></app-counter>
+            <app-counter class="w-100 m-3" [counter]="vm.root.counter4" title="counter 4 - ID is auto-generated"></app-counter>
+        </div>
+        
+    </example-frame>
+</div>

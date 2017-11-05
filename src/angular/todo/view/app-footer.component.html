@@ -1,0 +1,6 @@
+<div>
+    Show:
+    <app-link text="All" [active]="filter.value == 'SHOW_ALL'" (click)="filter.setValue('SHOW_ALL')"></app-link>,
+    <app-link text="Active" [active]="filter.value == 'SHOW_ACTIVE'" (click)="filter.setValue('SHOW_ACTIVE')"></app-link>,
+    <app-link text="Completed" [active]="filter.value == 'SHOW_COMPLETED'" (click)="filter.setValue('SHOW_COMPLETED')"></app-link>
+</div>
