@@ -1,6 +1,6 @@
 {
   "name": "redux-app-examples",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Example applications with aurelia and redux-app",
   "keywords": [
     "redux-app",
@@ -39,7 +39,7 @@
     "aurelia-bootstrapper": "^2.1.1",
     "aurelia-framework": "^1.1.5",
     "core-js": "^2.5.1",
-    "redux-app": "^1.7.0",
+    "redux-app": "^1.7.1",
     "redux-devtools-extension": "^2.13.2",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.18"

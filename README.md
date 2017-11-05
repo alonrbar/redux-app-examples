@@ -1,6 +1,6 @@
 # redux-app-examples
 
-Example applications with [aurelia](http://aurelia.io/) and [redux-app](https://github.com/alonrbar/redux-app).
+Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](https://angular.io) or [Aurelia](http://aurelia.io/). Choose what fits you best.
 
 ### Installtion
 
@@ -16,9 +16,20 @@ npm install
 
 After installation run `npm start` and open `localhost:3000` on your browser.
 
-### Examples Source:
+### Examples Source
 
-1. [**counters** - a basic example](https://github.com/alonrbar/redux-app-examples/tree/master/src/examples/counters)
-2. [**counters with identity** - using the `withId` decorator, a "mini ORM" feature](https://github.com/alonrbar/redux-app-examples/tree/master/src/examples/withId)
-3. [**async dogs** - using the `sequence` decorator, an async pattern that does not require thunks](https://github.com/alonrbar/redux-app-examples/tree/master/src/examples/sequence)
-4. [**todo list** - your familiar todo list example, this time with redux-app](https://github.com/alonrbar/redux-app-examples/tree/master/src/examples/todo)
+| Example | Angular | Aurelia |
+|---------|---------|---------|
+| **counters** - a basic example | [Angular][angular-counters] | [Aurelia][aurelia-counters] |
+| **counters with identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] |
+| **async dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] |
+| **todo list** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] |
+
+  [angular-counters]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/counters
+  [aurelia-counters]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/counters
+  [angular-withId]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/withId
+  [aurelia-withId]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/withId
+  [angular-sequence]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/sequence
+  [aurelia-sequence]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/sequence
+  [angular-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/todo
+  [aurelia-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/todo
