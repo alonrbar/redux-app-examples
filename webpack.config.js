@@ -44,13 +44,7 @@ module.exports = {
             /angular(\\|\/)core/,
             path.resolve('./src')
         ),
-        new HtmlWebpackPlugin({
-            chunks: ['main'],
-            filename: 'index.html',
-            template: 'src/examples/index.html',
-            inject: true,
-            minify: false
-        }),
+        htmlPluginForBundle('main'),
         htmlPluginForBundle('counters'),
         htmlPluginForBundle('sequence'),
         htmlPluginForBundle('withId'),
@@ -63,10 +57,11 @@ module.exports = {
 };
 
 function htmlPluginForBundle(name) {
+    const dir = (name === 'main' ? '' : name + '/');
     return new HtmlWebpackPlugin({
         chunks: [name],
-        filename: name + '/index.html',
-        template: 'src/examples/' + name + '/index.html',
+        filename: dir + 'index.html',
+        template: 'src/examples/' + dir + 'index.html',
         inject: true,
         minify: false
     });
