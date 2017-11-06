@@ -11,11 +11,16 @@ export class VisibleTodoListComponent {
     @connect
     public vm: VisibleTodoList;
 
-    constructor(private ref: ChangeDetectorRef) {
-        // temp workaround for time travel debugging 
-        // from: https://stackoverflow.com/questions/37437347/ngfor-not-updating-when-item-removed
-        setInterval(() => {
-            this.ref.detectChanges();
-        }, 100);
+    constructor() {
+        //
+        // 1. The following line of code is a time travel debugging workaround - it is NOT required on production.
+        // 2. Will supply a more elegant solution shortly.
+        //
+        // sources:
+        // https://stackoverflow.com/questions/37437347/ngfor-not-updating-when-item-removed
+        // https://stackoverflow.com/questions/41364386/whats-the-difference-between-markforcheck-and-detectchanges
+        // https://stackoverflow.com/questions/46284490/angular-change-detection-for-updates-within-a-callback
+        //
+        setInterval(() => { /* noop */ }, 400);
     }
 }
