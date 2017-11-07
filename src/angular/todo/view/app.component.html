@@ -1,9 +1,9 @@
 <div>
-    <example-frame [title]="vm.title" [subtitle]="vm.subtitle">
+    <example-frame [title]="app.root.title" [subtitle]="app.root.subtitle">
 
         <div class="card mt-5 w-50">
             <div class="card-body">
-                <add-todo (onAddTodo)="vm.todoList.addTodo($event)"></add-todo>
+                <add-todo (onAddTodo)="app.root.todoList.addTodo($event)"></add-todo>
                 <br>
                 <visible-todo-list></visible-todo-list>
                 <app-footer></app-footer>

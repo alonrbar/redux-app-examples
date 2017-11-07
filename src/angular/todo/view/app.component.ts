@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { connect } from 'redux-app';
+import { connect, ReduxApp } from 'redux-app';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 import { App } from '../view-model';
 
 @Component({
@@ -8,6 +9,5 @@ import { App } from '../view-model';
 })
 export class AppComponent {
 
-    @connect
-    public vm: App;
+    public app = new ReduxApp(new App(), devToolsEnhancer(undefined));
 }

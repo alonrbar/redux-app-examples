@@ -1,6 +1,16 @@
 # Change Log
 
-## 1.2.1 - 2017-11-6
+## 1.2.3 - 2017-11-7
+
+- Fix time-travel in Angular todo example.
+  - **Details:** In Angular it is important to instantiate ReduxApp inside an
+    Angular [zone][whats-a-zone] so that Angular will be able to monitor changes
+    even when actions are not dispatched from within it - as in the case of time
+    travel debugging where the actions and states are assigned by the Redux
+    DevTool browser extension. The most simple way to achieve that is to
+    instantiate ReduxApp inside an Angular Component.
+
+## 1.2.2 - 2017-11-6
 
 - Add Angular examples.
 
@@ -11,3 +21,5 @@
 ## 1.1.2 - 2017-11-4
 
 - Update todo example.
+
+[whats-a-zone]: https://github.com/angular/zone.js/#whats-a-zone
