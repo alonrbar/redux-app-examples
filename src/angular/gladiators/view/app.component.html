@@ -1,11 +1,13 @@
 <div>
 
-    <example-frame title="Gladiators" subtitle="A real world application">
+    <example-frame [title]="'Gladiators'" subtitle="A real world application">
 
-        <!-- our primitve router -->
-        <div [ngSwitch]="vm.router.currentRoute">
-            <main-page *ngSwitchCase="Route.MainPage"></main-page>
-            <gladiator-page *ngSwitchCase="Route.GladiatorPage"></gladiator-page>
+        <div class="card mt-5 w-100 p-3">
+            <!-- our primitve router -->
+            <div [ngSwitch]="vm.router.currentRoute">
+                <main-page *ngSwitchCase="Route.MainPage"></main-page>
+                <gladiator-page *ngSwitchCase="Route.GladiatorPage"></gladiator-page>
+            </div>
         </div>
 
     </example-frame>
