@@ -1,7 +1,7 @@
-import { component, connect, sequence } from 'redux-app';
-import { SelectedGladiator } from '../partials';
+import { component, connect, noDispatch, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
-import { GladiatorsList } from '../partials';
+import { modulo } from '../../utils';
+import { GladiatorsList, SelectedGladiator } from '../partials';
 
 @component
 export class GladiatorPage {
@@ -16,5 +16,17 @@ export class GladiatorPage {
     public save(gladiator: Gladiator): void {
         this.gladiatorsList.addOrUpdate(gladiator);
         this.gladiator.setValue(gladiator);
+    }
+
+    @sequence
+    public nextBadge() {
+        const badge = modulo(this.gladiator.value.badge + 1, 21);
+        this.gladiator.update({ badge });
+    }
+
+    @noDispatch
+    public prevBadge() {
+        const badge = modulo(this.gladiator.value.badge - 1, 21);
+        this.gladiator.update({ badge });
     }
 }

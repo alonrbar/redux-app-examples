@@ -1,5 +1,26 @@
 <div>
 
-    {{vm.gladiator.name}}
-
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" [ngClass]="'badge' + vm.gladiator.value.badge">
+                <div class="card-body">
+                    <h4 class="card-title">{{vm.gladiator.value.name}}</h4>
+                    <p class="card-text">Wins: {{vm.gladiator.value.wins}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <label for="gladiatorName">Gladiator Name</label>
+                    <input type="text" class="form-control" id="gladiatorName" placeholder="Enter name">
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info" (click)="vm.prevBadge()">&lt; Prev Badge</button>
+                    <button type="button" class="btn btn-info" (click)="vm.nextBadge()">Next Badge &gt;</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

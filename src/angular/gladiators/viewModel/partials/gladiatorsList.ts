@@ -4,7 +4,7 @@ import { Gladiator } from '../../model';
 @component
 export class GladiatorsList {
     
-    public gladiators: Gladiator[] = [new Gladiator({ name: "Maximus", birthDate: new Date(54, 0, 1) })];
+    public gladiators: Gladiator[] = [new Gladiator({ name: "Maximus" })];
 
     public add(gladiator: Gladiator): void {
         this.gladiators = this.gladiators.concat(gladiator);

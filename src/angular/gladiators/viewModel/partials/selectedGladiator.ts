@@ -9,4 +9,8 @@ export class SelectedGladiator {
     public setValue(newGladiator: Gladiator): void {
         this.value = newGladiator;
     }
+
+    public update(gladiator: Partial<Gladiator>): void {
+        Object.assign(this.value, gladiator);
+    }
 }

@@ -5,13 +5,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
-    entry: { 
+    entry: {
         "main": './src/main.ts',
         "angular/counters": './src/angular/counters/main.ts',
         "aurelia/counters": './src/aurelia/counters/main.ts',
         "angular/gladiators": './src/angular/gladiators/main.ts',
         "angular/sequence": './src/angular/sequence/main.ts',
-        "aurelia/sequence": './src/aurelia/sequence/main.ts',        
+        "aurelia/sequence": './src/aurelia/sequence/main.ts',
         "angular/withId": './src/angular/withId/main.ts',
         "aurelia/withId": './src/aurelia/withId/main.ts',
         "angular/todo": './src/angular/todo/main.ts',
@@ -34,36 +34,37 @@ module.exports = {
         rules: [
             { test: /.ts$/, use: ['ts-loader', 'angular2-template-loader'] },
             { test: /\.html$/, use: ['html-loader'] },
+            { test: /(\.css|\.scss)$/, use: ['style-loader', 'css-loader'] },
             { test: /(.png$|.gif$)/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] },
-            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] }
+{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] }
         ]
     },
-    resolve: {
-        extensions: ['.ts', '.js'],
+resolve: {
+    extensions: ['.ts', '.js'],
         modules: [path.resolve("./src"), "node_modules"]
-    },
-    plugins: [
-        new webpack.LoaderOptionsPlugin({ debug: true }),
-        new webpack.HotModuleReplacementPlugin(),
-        new AureliaPlugin({ aureliaApp: undefined, features: { polyfills: "none" } }),
-        new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core/,
-            path.resolve('./src')
-        ),
-        htmlPluginForBundle('main'),
-        htmlPluginForBundle('angular/counters'),
-        htmlPluginForBundle('aurelia/counters'),
-        htmlPluginForBundle('angular/gladiators'),
-        htmlPluginForBundle('angular/sequence'),
-        htmlPluginForBundle('aurelia/sequence'),
-        htmlPluginForBundle('angular/withId'),
-        htmlPluginForBundle('aurelia/withId'),
-        htmlPluginForBundle('angular/todo'),
-        htmlPluginForBundle('aurelia/todo'),
-        new ProgressBarPlugin({
-            clear: true
-        })
-    ]
+},
+plugins: [
+    new webpack.LoaderOptionsPlugin({ debug: true }),
+    new webpack.HotModuleReplacementPlugin(),
+    new AureliaPlugin({ aureliaApp: undefined, features: { polyfills: "none" } }),
+    new webpack.ContextReplacementPlugin(
+        /angular(\\|\/)core/,
+        path.resolve('./src')
+    ),
+    htmlPluginForBundle('main'),
+    htmlPluginForBundle('angular/counters'),
+    htmlPluginForBundle('aurelia/counters'),
+    htmlPluginForBundle('angular/gladiators'),
+    htmlPluginForBundle('angular/sequence'),
+    htmlPluginForBundle('aurelia/sequence'),
+    htmlPluginForBundle('angular/withId'),
+    htmlPluginForBundle('aurelia/withId'),
+    htmlPluginForBundle('angular/todo'),
+    htmlPluginForBundle('aurelia/todo'),
+    new ProgressBarPlugin({
+        clear: true
+    })
+]
 };
 
 function htmlPluginForBundle(name) {
