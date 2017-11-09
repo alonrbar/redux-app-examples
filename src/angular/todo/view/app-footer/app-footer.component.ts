@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { connect } from 'redux-app';
-import { VisibilityFilterValue } from '../view-model';
+import { VisibilityFilterValue } from '../../view-model';
 
 @Component({
     selector: 'app-footer',

@@ -1,5 +1,5 @@
 <template>
-    <require from="./todo.html"></require>
+    <require from="./../todo.html"></require>
     <ul>
         <todo repeat.for="todo of vm.visibleTodos" on-click.call="vm.toggleTodo(id)" todo.bind="todo"></todo>
     </ul>

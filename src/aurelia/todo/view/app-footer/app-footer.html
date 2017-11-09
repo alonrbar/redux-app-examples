@@ -1,5 +1,5 @@
 <template>
-    <require from="./app-link.html"></require> <!-- can't use the name 'link' as it is already an acceptable tag in html... -->
+    <require from="./../app-link.html"></require>
     <p>
         Show:
         <app-link text="All" active.bind="filter.value == 'SHOW_ALL'" on-click.call="filter.setValue('SHOW_ALL')"></app-link>,

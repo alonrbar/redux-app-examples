@@ -24,5 +24,5 @@ bootstrap((aurelia: Aurelia) => {
         .developmentLogging();
 
     aurelia.start()
-    .then(() => aurelia.setRoot(PLATFORM.moduleName('aurelia/todo/view/app'), document.body));
+    .then(() => aurelia.setRoot(PLATFORM.moduleName('aurelia/todo/view/app/app'), document.body));
 });
