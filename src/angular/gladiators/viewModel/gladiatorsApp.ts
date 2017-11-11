@@ -1,6 +1,6 @@
 import { component, connect } from 'redux-app';
 import { GladiatorPage, MainPage } from './pages';
-import { SelectedGladiator, GladiatorsList } from './partials';
+import { SelectedGladiator, GladiatorRepository } from './partials';
 import { Router } from './router';
 
 @component
@@ -10,11 +10,11 @@ export class GladiatorsApp {
 
     public pages = {
         main: new MainPage(),
-        gladiatorPage: new GladiatorPage()
+        gladiator: new GladiatorPage()
     };
 
     public partials = {
-        gladiatorsList: new GladiatorsList(),
+        gladiatorsList: new GladiatorRepository(),
         selectedGladiator: new SelectedGladiator()
     };
 }

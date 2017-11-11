@@ -1,4 +1,4 @@
-import { randomInt } from "../utils";
+import { Badge } from './badge';
 
 export class Gladiator {
 
@@ -6,7 +6,7 @@ export class Gladiator {
 
     public readonly id = Gladiator.nextId++;
     public name: string;
-    public badge = randomInt(0, 20);
+    public badge = Badge.randomBadge();
     public wins = 0;
     public isActive = true;    
 

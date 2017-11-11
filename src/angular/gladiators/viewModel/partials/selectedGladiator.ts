@@ -1,16 +1,6 @@
-import { component } from 'redux-app';
-import { Gladiator } from '../../model/gladiator';
+import { Gladiator } from '../../model';
+import { Value } from '../common';
 
-@component
-export class SelectedGladiator {
-    
-    public value: Gladiator;
+export class SelectedGladiator extends Value<Gladiator> {
 
-    public setValue(newGladiator: Gladiator): void {
-        this.value = newGladiator;
-    }
-
-    public update(gladiator: Partial<Gladiator>): void {
-        this.value = Object.assign({}, this.value, gladiator);
-    }
 }

@@ -1,32 +1,50 @@
-import { component, connect, noDispatch, sequence } from 'redux-app';
-import { Gladiator } from '../../model';
-import { modulo } from '../../utils';
-import { GladiatorsList, SelectedGladiator } from '../partials';
+import { component, connect, sequence } from 'redux-app';
+import { Badge, Gladiator } from '../../model';
+import { Value } from '../common';
+import { GladiatorRepository, SelectedGladiator } from '../partials';
 
 @component
 export class GladiatorPage {
 
-    @connect
-    public gladiator: SelectedGladiator;
+    //
+    // public members
+    //    
+
+    public tempGladiator = new Value<Gladiator>();
+
+    //
+    // private members
+    //
 
     @connect
-    private gladiatorsList: GladiatorsList;
+    private selectedGladiator: SelectedGladiator;
+
+    @connect
+    private repo: GladiatorRepository;
+
+    //
+    // public methods
+    //
+
+    public reset(): void {
+        this.tempGladiator.setValue(this.selectedGladiator.value);
+    }
 
     @sequence
-    public save(gladiator: Gladiator): void {
-        this.gladiatorsList.addOrUpdate(gladiator);
-        this.gladiator.setValue(gladiator);
+    public save(): void {
+        this.repo.addOrUpdate(this.tempGladiator.value);
+        this.selectedGladiator.setValue(this.tempGladiator.value);
     }
 
     @sequence
     public nextBadge() {
-        const badge = modulo(this.gladiator.value.badge + 1, 21);
-        this.gladiator.update({ badge });
+        const badge = Badge.nextBadge(this.tempGladiator.value.badge);
+        this.tempGladiator.updateValue({ badge });
     }
 
-    @noDispatch
+    @sequence
     public prevBadge() {
-        const badge = modulo(this.gladiator.value.badge - 1, 21);
-        this.gladiator.update({ badge });
+        const badge = Badge.prevBadge(this.tempGladiator.value.badge);
+        this.tempGladiator.updateValue({ badge });
     }
 }
