@@ -4,7 +4,13 @@
     height: 10em;
 }
 
-.gladiator-thumbnail .card-text {
+.gladiator-thumbnail .card-img-overlay {
+    padding: 5px;
+}
+
+.gladiator-thumbnail .card-bottom {
     position: absolute;
     bottom: 0;
+    width: 100%;
+    padding-right: 10px;
 }

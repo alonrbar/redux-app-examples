@@ -3,14 +3,18 @@
         <gladiator-profile [gladiator]="vm.tempGladiator.value"></gladiator-profile>
     </div>
     <div class="col">
-        <form>
+        <a href="javascript:void(0)" (click)="vm.goBack()" class="float-right">Back</a>
+        <form class="mt-5">
             <div class="form-group">
                 <label for="gladiatorName">Gladiator Name</label>
                 <input type="text" class="form-control" id="gladiatorName" placeholder="Enter name">
             </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-info" (click)="vm.prevBadge()">&lt; Prev Badge</button>
-                <button type="button" class="btn btn-info" (click)="vm.nextBadge()">Next Badge &gt;</button>
+            <div class="form-row">
+                <label class="col-sm-3 col-form-label">Banner:</label>
+                <div class="btn-group col-9">
+                    <button type="button" class="btn btn-secondary" (click)="vm.prevBanner()">&lt; Prev</button>
+                    <button type="button" class="btn btn-secondary" (click)="vm.nextBanner()">Next &gt;</button>
+                </div>
             </div>
         </form>
     </div>

@@ -1,6 +1,9 @@
 <div class="card gladiator-thumbnail">
     <img class="card-img bg-light gladiator-badge" [ngClass]="gladiator.banner">
     <div class="card-img-overlay">
-        <span class="card-text">{{gladiator.name}}</span>
+        <div class="card-bottom">
+            <span class="float-left">{{gladiator.name}}</span>
+            <span class="float-right badge badge-warning">{{gladiator.wins}}</span>
+        </div>
     </div>
 </div>

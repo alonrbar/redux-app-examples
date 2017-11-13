@@ -17,7 +17,7 @@ export class MainPage {
     @computed
     public get topGladiators(): Gladiator[] {
         var top = this.gladiatorsRepo.items.slice();
-        top.sort((a, b) => a.wins - b.wins);
+        top.sort((a, b) => b.wins - a.wins);
         return top.slice(0, 3);
     }
 

@@ -1,4 +1,5 @@
 import { Banner } from './banner';
+import { randomInt } from '../utils';
 
 export class Gladiator {
 
@@ -7,7 +8,7 @@ export class Gladiator {
     public readonly id = Gladiator.nextId++;
     public name: string;
     public banner = Banner.randomBanner();
-    public wins = 0;
+    public wins = randomInt(0, 10);
     public isActive = true;    
 
     constructor(initial?: Partial<Gladiator>) {
