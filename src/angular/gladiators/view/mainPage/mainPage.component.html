@@ -1,7 +1,16 @@
 <div>
 
-    <ul>
-        <li *ngFor="let gladiator of vm.activeGladiators.list" (click)="vm.goToGladiatorPage(gladiator)">{{gladiator.name}}</li>
-    </ul>
+    <div class="row">
+        <div class="col-6">
+            <div class="list-group">
+                <gladiator-thumbnail *ngFor="let gladiator of vm.topGladiators" [gladiator]="gladiator" (click)="vm.goToGladiatorPage(gladiator)" class="m-2">
+                </gladiator-thumbnail>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <button (click)="add()">Add</button>
+        </div>
+    </div>
 
 </div>

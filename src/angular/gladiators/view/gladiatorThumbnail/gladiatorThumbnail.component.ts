@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
 import '../../assets/gladiator-banner.css';
 import { Banner, Gladiator } from '../../model';
-import './gladiatorProfile.component.css';
+import './gladiatorThumbnail.component.css';
 
 @Component({
-    selector: 'gladiator-profile',    
-    templateUrl: './gladiatorProfile.component.html'
+    selector: 'gladiator-thumbnail',    
+    templateUrl: './gladiatorThumbnail.component.html'
 })
-export class GladiatorProfileComponent {
+export class GladiatorThumbnailComponent {
+
     public readonly credits = Banner.credits;
 
-    @Input() public isSmall = false;
     @Input() public gladiator: Gladiator;
 }

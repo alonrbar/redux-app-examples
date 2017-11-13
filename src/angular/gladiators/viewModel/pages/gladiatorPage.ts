@@ -1,5 +1,5 @@
 import { component, connect, sequence } from 'redux-app';
-import { Badge, Gladiator } from '../../model';
+import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorRepository, SelectedGladiator } from '../partials';
 
@@ -38,13 +38,13 @@ export class GladiatorPage {
 
     @sequence
     public nextBadge() {
-        const badge = Badge.nextBadge(this.tempGladiator.value.badge);
-        this.tempGladiator.updateValue({ badge });
+        const banner = Banner.nextBanner(this.tempGladiator.value.banner);
+        this.tempGladiator.updateValue({ banner });
     }
 
     @sequence
     public prevBadge() {
-        const badge = Badge.prevBadge(this.tempGladiator.value.badge);
-        this.tempGladiator.updateValue({ badge });
+        const banner = Banner.prevBanner(this.tempGladiator.value.banner);
+        this.tempGladiator.updateValue({ banner });
     }
 }

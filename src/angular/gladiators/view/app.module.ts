@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './mainPage/mainPage.component';
 import { GladiatorPageComponent } from './gladiatorPage/gladiatorPage.component';
 import { GladiatorProfileComponent } from './gladiatorProfile/gladiatorProfile.component';
+import { GladiatorThumbnailComponent } from './gladiatorThumbnail/gladiatorThumbnail.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { GladiatorProfileComponent } from './gladiatorProfile/gladiatorProfile.c
     AppComponent,
     MainPageComponent,
     GladiatorPageComponent,
-    GladiatorProfileComponent
+    GladiatorProfileComponent,
+    GladiatorThumbnailComponent
   ],
   imports: [
     BrowserModule

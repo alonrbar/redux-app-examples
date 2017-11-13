@@ -1,0 +1,10 @@
+.gladiator-thumbnail {
+    position: relative;
+    width: 8em;
+    height: 10em;
+}
+
+.gladiator-thumbnail .card-text {
+    position: absolute;
+    bottom: 0;
+}

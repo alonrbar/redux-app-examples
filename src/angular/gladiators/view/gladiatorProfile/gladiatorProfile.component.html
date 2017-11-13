@@ -1,9 +1,9 @@
-<div class="card" style="width: 20em;">
-    <img class="card-img-top gladiator-badge" [ngClass]="'badge' + gladiator.badge">
+<div class="card gladiator-profile">
+    <img class="card-img-top bg-light pt-4 gladiator-badge" [ngClass]="gladiator.banner">
     <div class="card-body">
         <span class="badge badge-info" [title]="credits">?</span>
         <h4 class="card-title mt-1">{{gladiator.name}}</h4>
-        <p class="card-text">            
+        <p class="card-text">
             Wins: {{gladiator.wins}}
         </p>
     </div>
