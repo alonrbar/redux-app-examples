@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import { GladiatorsApp, Route } from '../viewModel';
+import './app.component.css';
 
 @Component({
   selector: 'app-root',

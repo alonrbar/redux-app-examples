@@ -7,6 +7,7 @@ import { MainPageComponent } from './mainPage/mainPage.component';
 import { GladiatorPageComponent } from './gladiatorPage/gladiatorPage.component';
 import { GladiatorProfileComponent } from './gladiatorProfile/gladiatorProfile.component';
 import { GladiatorThumbnailComponent } from './gladiatorThumbnail/gladiatorThumbnail.component';
+import { ArenaPageComponent } from './arenaPage/arenaPage.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GladiatorThumbnailComponent } from './gladiatorThumbnail/gladiatorThumb
     MainPageComponent,
     GladiatorPageComponent,
     GladiatorProfileComponent,
-    GladiatorThumbnailComponent
+    GladiatorThumbnailComponent,
+    ArenaPageComponent
   ],
   imports: [
     BrowserModule

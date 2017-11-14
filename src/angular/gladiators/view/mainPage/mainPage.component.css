@@ -1,0 +1,30 @@
+.gladiators-list-container {
+    display: flex;
+    align-items: flex-end;
+    overflow-x: scroll;
+}
+
+.gladiators-list {
+    flex: 0 0 auto;
+}
+
+.gladiators-list li {
+    border: 1px solid #868E96;
+    border-radius: 5%;
+    padding: 20px;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.gladiators-list:hover li:hover {
+    background-color: #f8f9fa;
+}
+
+.coliseum {
+    content: url('../../assets/img/coliseum.png');
+    width: 450px;
+    height: 265px;
+    margin: auto;
+    cursor: pointer;
+}

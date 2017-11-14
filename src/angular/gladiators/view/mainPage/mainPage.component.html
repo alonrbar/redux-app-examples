@@ -1,16 +1,25 @@
-<div>
-
+<div class="page">
     <div class="row">
-        <div class="col-6">
+        <div class="col-2 text-center" style="overflow: hidden">
+            <h5>Top Fighters</h5>
             <div class="list-group">
-                <gladiator-thumbnail *ngFor="let gladiator of vm.topGladiators" [gladiator]="gladiator" (click)="vm.goToGladiatorPage(gladiator)" class="m-2">
+                <gladiator-thumbnail *ngFor="let gladiator of vm.topGladiators" [gladiator]="gladiator" (click)="vm.goToGladiatorPage(gladiator)"
+                    class="m-2">
                 </gladiator-thumbnail>
             </div>
         </div>
 
-        <div class="col-6">
-            <button (click)="add()">Add</button>
+        <div class="col-10">
+            <div class="row h-75">
+                <img class="coliseum" (click)="vm.toTheArena()">
+            </div>
+            <div class="row h-25">
+                <div class="gladiators-list-container">
+                    <ul class="list-inline gladiators-list mb-0">
+                        <li *ngFor="let gladiator of vm.gladiatorsRepo.items" class="list-inline-item" (click)="vm.goToGladiatorPage(gladiator)">{{gladiator.name}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>

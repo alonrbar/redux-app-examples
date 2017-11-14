@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import '../../assets/gladiator-banner.css';
+import '../../assets/style/gladiator-banner.css';
 import { Banner, Gladiator } from '../../model';
 import './gladiatorProfile.component.css';
 

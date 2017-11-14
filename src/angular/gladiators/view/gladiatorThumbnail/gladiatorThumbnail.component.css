@@ -1,7 +1,9 @@
 .gladiator-thumbnail {
     position: relative;
-    width: 8em;
+    max-width: 8em;
     height: 10em;
+    cursor: pointer;
+    user-select: none;
 }
 
 .gladiator-thumbnail .card-img-overlay {

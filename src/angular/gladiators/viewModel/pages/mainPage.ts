@@ -35,6 +35,11 @@ export class MainPage {
     }
 
     @sequence
+    public toTheArena() {
+        this.router.navigateTo(Route.ArenaPage);
+    }
+
+    @sequence
     public newGladiator(): void {
         this.goToGladiatorPage(new Gladiator());
     }
