@@ -14,7 +14,7 @@ export class GladiatorsApp {
     };
 
     public partials = {
-        gladiatorsList: new GladiatorRepository(),
+        gladiatorsRepo: new GladiatorRepository(),
         selectedGladiator: new SelectedGladiator()
     };
 }

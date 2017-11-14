@@ -16,3 +16,10 @@
     width: 100%;
     padding-right: 10px;
 }
+
+.gladiator-thumbnail .gladiator-name {
+    max-width: 6em;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    word-wrap: normal;
+}
