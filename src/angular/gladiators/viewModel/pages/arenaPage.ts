@@ -13,10 +13,10 @@ export class ArenaPage {
 
     public status: string;
 
-    public gladiator1: Gladiator;
-    public lifeMeter1: number;
-    public gladiator2: Gladiator;
-    public lifeMeter2: number;
+    public gladiator1 = new Gladiator();
+    public lifeMeter1 = 0;
+    public gladiator2 = new Gladiator();
+    public lifeMeter2 = 0;
 
     //
     // private dependencies
@@ -69,7 +69,7 @@ export class ArenaPage {
         const strikeDelay = 600;
         const nextRoundDelay = 300;
 
-        this.setStatus('round ' + round);
+        this.setStatus('Round ' + round);
         setTimeout(() => {
 
             const strikerIndex = ((round - 1) % 2) + 1;
@@ -86,7 +86,7 @@ export class ArenaPage {
                 const striker = (strikerIndex === 1 ? this.gladiator1 : this.gladiator2);
                 const updatedStriker = Object.assign({}, striker, { wins: striker.wins + 1 });
                 this.repo.addOrUpdate(updatedStriker);
-                this.setStatus(`${striker.name} won!`);
+                this.setStatus(`${striker.name} wins!`);
             } else {
 
                 // next round
