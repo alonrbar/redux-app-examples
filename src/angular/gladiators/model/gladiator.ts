@@ -9,7 +9,6 @@ export class Gladiator {
     public name: string;
     public banner = Banner.randomBanner();
     public wins = 0;
-    public isActive = true;    
 
     constructor(initial?: Partial<Gladiator>) {
         Object.assign(this, initial);
