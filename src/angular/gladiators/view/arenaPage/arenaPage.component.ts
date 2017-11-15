@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { connect } from 'redux-app';
-import { GladiatorPage } from '../../viewModel';
+import { ArenaPage } from '../../viewModel';
 
 @Component({
   selector: 'arena-page',
@@ -9,5 +9,9 @@ import { GladiatorPage } from '../../viewModel';
 export class ArenaPageComponent {
 
   @connect
-  public vm: GladiatorPage;
+  public vm: ArenaPage;
+
+  constructor() {
+    this.vm.prepareForFight();
+  }
 }

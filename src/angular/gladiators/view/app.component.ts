@@ -26,7 +26,7 @@ export class AppComponent {
   private populate(): void {
     for (let i = 0; i < 10; i++) {
       const newGladiator = new Gladiator();
-      newGladiator.name = "Maximums_asdsdfsdfsdfsdf" + i;
+      newGladiator.name = "Maximums_" + i;
       this.vm.partials.gladiatorsRepo.add(newGladiator);
     }
   }

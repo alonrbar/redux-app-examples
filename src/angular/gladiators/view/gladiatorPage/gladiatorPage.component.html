@@ -1,15 +1,26 @@
 <div class="page">
+
+    <!-- back button -->
     <a href="javascript:void(0)" (click)="vm.goBack()" class="float-right">Back</a>
+
     <div class="row">
+
+        <!-- profile preview -->
         <div class="col-12 col-xl-3" style="min-width: 20em">
             <gladiator-profile [gladiator]="vm.tempGladiator.value"></gladiator-profile>
         </div>
+
+        <!-- edit controls -->
         <div class="col-12 col-xl-8">
             <form class="mt-5">
+
+                <!-- name -->
                 <div class="form-group">
                     <label for="gladiatorName">Gladiator Name</label>
                     <input type="text" class="form-control" id="gladiatorName" placeholder="Enter name">
                 </div>
+
+                <!-- banner -->
                 <div class="form-row">
                     <label class="col-3 col-form-label">Banner:</label>
                     <div class="btn-group col-9">

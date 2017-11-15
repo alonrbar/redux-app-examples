@@ -3,12 +3,14 @@
     <example-frame [title]="'Gladiators'" subtitle="A real world application">
 
         <div class="card mt-5 w-100 p-3">
+
             <!-- our primitve router -->
             <div [ngSwitch]="vm.router.currentRoute">
                 <main-page *ngSwitchCase="Route.MainPage"></main-page>
                 <gladiator-page *ngSwitchCase="Route.GladiatorPage"></gladiator-page>
                 <arena-page *ngSwitchCase="Route.ArenaPage"></arena-page>
             </div>
+            
         </div>
 
     </example-frame>

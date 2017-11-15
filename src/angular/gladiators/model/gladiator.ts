@@ -8,7 +8,7 @@ export class Gladiator {
     public readonly id = Gladiator.nextId++;
     public name: string;
     public banner = Banner.randomBanner();
-    public wins = randomInt(0, 10);
+    public wins = 0;
     public isActive = true;    
 
     constructor(initial?: Partial<Gladiator>) {

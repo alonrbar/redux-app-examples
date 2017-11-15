@@ -1,5 +1,7 @@
 <div class="page">
     <div class="row">
+
+        <!-- top fighters list -->
         <div class="col-2 text-center" style="overflow: hidden">
             <h5>Top Fighters</h5>
             <div class="list-group">
@@ -10,9 +12,13 @@
         </div>
 
         <div class="col-10">
+
+            <!-- enter the arena -->
             <div class="row h-75">
                 <img class="coliseum" (click)="vm.toTheArena()">
             </div>
+
+            <!-- all gladiators list -->
             <div class="row h-25">
                 <div class="gladiators-list-container">
                     <ul class="list-inline gladiators-list mb-0">
@@ -20,6 +26,7 @@
                     </ul>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>

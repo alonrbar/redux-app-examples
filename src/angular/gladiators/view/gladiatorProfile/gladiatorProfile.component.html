@@ -1,8 +1,15 @@
 <div class="card gladiator-profile">
+
+    <!-- banner -->
     <img class="card-img-top bg-light pt-4 gladiator-badge" [ngClass]="gladiator.banner">
+
     <div class="card-body">
         <span class="badge badge-info" [title]="credits">?</span>
+
+        <!-- name -->
         <h4 class="card-title mt-1">{{gladiator.name}}</h4>
+
+        <!-- wins -->
         <p class="card-text">
             Wins: {{gladiator.wins}}
         </p>

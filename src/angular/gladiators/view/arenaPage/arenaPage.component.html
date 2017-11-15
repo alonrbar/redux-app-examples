@@ -1,4 +1,59 @@
 <div class="page">
-    Arena Page
-    <a href="javascript:void(0)" (click)="vm.goBack()" class="float-right">Back</a>
+
+    <!-- back button -->
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <a href="javascript:void(0)" (click)="vm.goBack()">Back</a>
+        </div>
+    </div>
+    <br>
+
+    <!-- the arena -->
+    <div class="row justify-content-center">
+
+        <!-- contenter 1 -->
+        <div class="col-3">
+            <div class="row d-flex justify-content-center">
+                <gladiator-profile class="center-block" [gladiator]="vm.gladiator1"></gladiator-profile>
+            </div>
+            <br>
+
+            <!-- life -->
+            <div class="row">
+                <div class="progress w-100">
+                    <div class="progress-bar bg-success" role="progressbar" [style.width]="vm.lifeMeter1 + '%'"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- controls -->
+        <div class="col-3 align-self-center" style="height: 20em">
+            <div class="row h-25">
+                <div class="col d-flex justify-content-center align-items-center">
+                    {{vm.status}}
+                </div>
+            </div>
+            <div class="row h-50">
+                <div class="col align-self-center d-flex justify-content-center">
+                    <button class="btn btn-danger" (click)="vm.fight()">Fight!!</button>
+                </div>
+            </div>
+            <div class="row h-25"></div>
+        </div>
+
+        <!-- contenter 2 -->
+        <div class="col-3">
+            <div class="row d-flex justify-content-center">
+                <gladiator-profile class="center-block" [gladiator]="vm.gladiator2"></gladiator-profile>
+            </div>
+            <br>
+
+            <!-- life -->
+            <div class="row">
+                <div class="progress w-100">
+                        <div class="progress-bar bg-success" role="progressbar" [style.width]="vm.lifeMeter2 + '%'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
