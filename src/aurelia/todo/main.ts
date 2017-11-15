@@ -4,7 +4,7 @@ import { Aurelia, PLATFORM } from 'aurelia-framework';
 import 'aurelia-loader-webpack';
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import { App } from './view-model/app';
+import { App } from './viewModel/app';
 
 //
 // bootstrap the view-model

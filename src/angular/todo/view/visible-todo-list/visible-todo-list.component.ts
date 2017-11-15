@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { connect } from 'redux-app';
-import { VisibleTodoList } from '../../view-model';
+import { VisibleTodoList } from '../../viewModel';
 
 @Component({
     selector: 'visible-todo-list',
