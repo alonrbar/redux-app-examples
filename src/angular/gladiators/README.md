@@ -4,15 +4,15 @@ A real world example made with [redux-app](https://github.com/alonrbar/redux-app
 
 ## Main Page
 
-![Main Page](/assets/screenshots/main-page.png?raw=true "Main Page")
+![Main Page](./assets/screenshots/main-page.PNG?raw=true "Main Page")
 
 ## Edit Profile Page
 
-![Edit Profile Page](/assets/screenshots/profile-page.png?raw=true "Edit Profile Page")
+![Edit Profile Page](./assets/screenshots/profile-page.PNG?raw=true "Edit Profile Page")
 
 ## The Arena Page
 
-![Arena Page](/assets/screenshots/arena-page.png?raw=true "Arena Page")
+![Arena Page](./assets/screenshots/arena-page.PNG?raw=true "Arena Page")
 
 ## Remarks
 
