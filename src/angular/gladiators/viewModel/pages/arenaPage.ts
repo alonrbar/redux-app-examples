@@ -40,6 +40,11 @@ export class ArenaPage {
     @sequence
     public prepareForFight() {
 
+        if (this.repo.items.length < 2) {
+            this.setStatus('It takes two to tango...');
+            return;
+        }
+
         // choose fighter #1
         const firstIndex = this.randomFighterIndex();
         const firstContender = this.repo.items[firstIndex];

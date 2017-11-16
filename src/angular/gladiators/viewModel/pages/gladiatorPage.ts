@@ -1,4 +1,4 @@
-import { component, connect, sequence } from 'redux-app';
+import { component, connect, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorRepository, SelectedGladiator } from '../partials';
@@ -11,6 +11,7 @@ export class GladiatorPage {
     // public members
     //    
 
+    @withId
     public tempGladiator = new Value<Gladiator>();
 
     //
@@ -35,6 +36,7 @@ export class GladiatorPage {
        this.router.navigateTo(Route.MainPage);
     }
 
+    @sequence
     public reset(): void {
         this.tempGladiator.setValue(this.selectedGladiator.value);
     }

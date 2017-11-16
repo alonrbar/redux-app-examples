@@ -18,18 +18,18 @@ export class Repository<T extends IIdentifiable> {
     }
 
     public update(item: T): void {
-        this.items = this.items.map(g => {
-            if (g.id === item.id) {
-                return Object.assign({}, g, item);
+        this.items = this.items.map(it => {
+            if (it.id === item.id) {
+                return Object.assign({}, it, item);
             } else {
-                return g;
+                return it;
             }
         });
     }
 
     @sequence
     public addOrUpdate(item: T): void {
-        if (this.items.find(g => g.id === item.id)) {
+        if (this.items.find(it => it.id === item.id)) {
             this.update(item);
         } else {
             this.add(item);
