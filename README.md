@@ -20,10 +20,11 @@ After installation run `npm start` and open `localhost:3000` on your browser.
 
 | Example | Angular | Aurelia |
 |---------|---------|---------|
-| **counters** - a basic example | [Angular][angular-counters] | [Aurelia][aurelia-counters] |
-| **counters with identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] |
-| **async dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] |
-| **todo list** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] |
+| **Counters** - a basic example | [Angular][angular-counters] | [Aurelia][aurelia-counters] |
+| **Counters with Identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] |
+| **Async Dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] |
+| **Todo List** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] |
+| **Gladiators** - a real world example | [Angular][angular-gladiators] | Coming Soon... |
 
 [Change Log](https://github.com/alonrbar/redux-app-examples/blob/master/CHANGELOG.md)
 
@@ -35,3 +36,4 @@ After installation run `npm start` and open `localhost:3000` on your browser.
   [aurelia-sequence]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/sequence
   [angular-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/todo
   [aurelia-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/todo
+  [angular-gladiators]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/gladiators

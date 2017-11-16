@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.0 - 2017-11-16
+
+- New real world example - Gladiators.
+
 ## 1.2.3 - 2017-11-7
 
 - Fix time-travel in Angular todo example.
