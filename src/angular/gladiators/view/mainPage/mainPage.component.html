@@ -2,7 +2,7 @@
     <div class="row">
 
         <!-- top fighters list -->
-        <div class="col-2 text-center" style="overflow: hidden">
+        <div *ngIf="vm.topGladiators.length" class="col-2 text-center" style="overflow: hidden">
             <h5>Top Fighters</h5>
             <div class="list-group">
                 <gladiator-thumbnail *ngFor="let gladiator of vm.topGladiators" [gladiator]="gladiator" (click)="vm.goToGladiatorPage(gladiator)"
@@ -10,6 +10,7 @@
                 </gladiator-thumbnail>
             </div>
         </div>
+        <div *ngIf="!vm.topGladiators.length" class="col-2"></div>
 
         <div class="col-10 page">
 

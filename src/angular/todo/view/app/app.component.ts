@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { connect, ReduxApp } from 'redux-app';
+import { ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import { App } from '../../viewModel';
 

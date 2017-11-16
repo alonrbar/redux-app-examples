@@ -33,6 +33,6 @@ export class Collection<T extends IIdentifiable> {
     }
 
     public remove(item: T): void {
-        this.items = this.items.filter(it => it !== item);
+        this.items = this.items.filter(it => it.id !== item.id);
     }
 }

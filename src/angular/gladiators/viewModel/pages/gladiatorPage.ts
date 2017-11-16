@@ -68,6 +68,12 @@ export class GladiatorPage {
         setTimeout(() => this.toggleStatus(false), 2000);
     }    
 
+    @sequence
+    public delete(): void {
+        this.list.remove(this.selectedGladiator.value);
+        this.goBack();
+    }
+
     //
     // actions
     //

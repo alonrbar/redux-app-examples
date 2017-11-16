@@ -1,4 +1,4 @@
-import { component, connect } from 'redux-app';
+import { component } from 'redux-app';
 import { ArenaPage, GladiatorPage, MainPage } from './pages';
 import { GladiatorsList, SelectedGladiator } from './partials';
 import { Router } from './router';

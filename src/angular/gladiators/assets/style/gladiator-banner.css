@@ -3,6 +3,10 @@
     height: 100%;
 }
 
+.banner_empty {
+    content: url("../img/banner_empty.svg");
+}
+
 .banner0 {
     content: url("../img/noun_1075440_cc.svg");
 }

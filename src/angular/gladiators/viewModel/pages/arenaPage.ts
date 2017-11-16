@@ -13,9 +13,9 @@ export class ArenaPage {
 
     public status: string;
 
-    public gladiator1 = new Gladiator();
+    public gladiator1: Gladiator;
     public lifeMeter1 = 0;
-    public gladiator2 = new Gladiator();
+    public gladiator2: Gladiator;
     public lifeMeter2 = 0;
 
     //

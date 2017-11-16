@@ -1,6 +1,5 @@
 import { component, computed, connect, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
-import { randomInt } from '../../utils';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
 
@@ -48,16 +47,16 @@ export class MainPage {
 
     @sequence
     public newGladiator(): void {
-        this.goToGladiatorPage(new Gladiator());
+        const newGladiator = new Gladiator();
+        this.gladiatorsList.add(newGladiator);
+        this.goToGladiatorPage(newGladiator);
     }
 
     @sequence
     public generateGladiators(): void {
         const newGladiators = [];
         for (let i = 0; i < 5; i++) {
-            const newGladiator = new Gladiator();
-            newGladiator.name = "Maximums_" + randomInt(1, 9999);
-            newGladiators.push(newGladiator);
+            newGladiators.push(new Gladiator());
         }
 
         this.gladiatorsList.add(newGladiators);
