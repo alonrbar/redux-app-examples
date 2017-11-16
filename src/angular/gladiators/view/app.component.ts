@@ -19,15 +19,5 @@ export class AppComponent {
     ReduxApp.options.logLevel = LogLevel.Debug;
     const app = new ReduxApp(new GladiatorsApp(), devToolsEnhancer(undefined));
     this.vm = app.root;
-    
-    this.populate();
-  }
-
-  private populate(): void {
-    for (let i = 0; i < 10; i++) {
-      const newGladiator = new Gladiator();
-      newGladiator.name = "Maximums_" + i;
-      this.vm.partials.gladiatorsRepo.add(newGladiator);
-    }
   }
 }

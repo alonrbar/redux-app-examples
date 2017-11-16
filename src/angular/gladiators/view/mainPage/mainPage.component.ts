@@ -10,5 +10,5 @@ import './mainPage.component.css';
 export class MainPageComponent {
 
   @connect
-  public vm: MainPage;
+  public vm: MainPage;  
 }

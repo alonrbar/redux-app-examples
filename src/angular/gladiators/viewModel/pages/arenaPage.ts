@@ -1,7 +1,7 @@
 import { component, connect, noDispatch, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { randomInt } from '../../utils';
-import { GladiatorRepository } from '../partials';
+import { GladiatorsList } from '../partials';
 import { Route, Router } from '../router';
 
 @component
@@ -23,7 +23,7 @@ export class ArenaPage {
     //
 
     @connect
-    private repo: GladiatorRepository;
+    private list: GladiatorsList;
 
     @connect
     private router: Router;
@@ -40,21 +40,21 @@ export class ArenaPage {
     @sequence
     public prepareForFight() {
 
-        if (this.repo.items.length < 2) {
+        if (this.list.items.length < 2) {
             this.setStatus('It takes two to tango...');
             return;
         }
 
         // choose fighter #1
         const firstIndex = this.randomFighterIndex();
-        const firstContender = this.repo.items[firstIndex];
+        const firstContender = this.list.items[firstIndex];
 
         // choose fighter #2
         var secondIndex = firstIndex;
         while (secondIndex === firstIndex) {
             secondIndex = this.randomFighterIndex();
         }
-        const secondContender = this.repo.items[secondIndex];
+        const secondContender = this.list.items[secondIndex];
 
         this.setFighters(firstContender, secondContender);
         this.setStatus('Get ready to rumble!');
@@ -90,7 +90,7 @@ export class ArenaPage {
                 // the fight is over
                 const striker = (strikerIndex === 1 ? this.gladiator1 : this.gladiator2);
                 const updatedStriker = Object.assign({}, striker, { wins: striker.wins + 1 });
-                this.repo.addOrUpdate(updatedStriker);
+                this.list.addOrUpdate(updatedStriker);
                 this.setStatus(`${striker.name} wins!`);
             } else {
 
@@ -135,6 +135,6 @@ export class ArenaPage {
 
     @noDispatch
     private randomFighterIndex(): number {
-        return randomInt(0, this.repo.items.length - 1);
+        return randomInt(0, this.list.items.length - 1);
     }
 }

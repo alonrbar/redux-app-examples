@@ -38,6 +38,7 @@
     "aurelia-bootstrapper": "^2.1.1",
     "aurelia-framework": "^1.1.5",
     "core-js": "^2.5.1",
+    "lodash.debounce": "^4.0.8",
     "redux-app": "^1.7.1",
     "redux-devtools-extension": "^2.13.2",
     "reflect-metadata": "^0.1.10",

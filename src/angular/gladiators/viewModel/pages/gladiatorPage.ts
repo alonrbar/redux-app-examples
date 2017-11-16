@@ -1,8 +1,8 @@
 import { component, connect, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
-import { GladiatorRepository, SelectedGladiator } from '../partials';
-import { Router, Route } from '../router';
+import { GladiatorsList, SelectedGladiator } from '../partials';
+import { Route, Router } from '../router';
 
 @component
 export class GladiatorPage {
@@ -10,6 +10,8 @@ export class GladiatorPage {
     //
     // public members
     //    
+
+    public showStatus = false;
 
     @withId
     public tempGladiator = new Value<Gladiator>();
@@ -22,13 +24,13 @@ export class GladiatorPage {
     private selectedGladiator: SelectedGladiator;
 
     @connect
-    private repo: GladiatorRepository;
+    private list: GladiatorsList;
 
     @connect
     private router: Router;
 
     //
-    // public methods
+    // methods
     //    
 
     @sequence
@@ -42,9 +44,8 @@ export class GladiatorPage {
     }
 
     @sequence
-    public save(): void {
-        this.repo.addOrUpdate(this.tempGladiator.value);
-        this.selectedGladiator.setValue(this.tempGladiator.value);
+    public setName(name: string): void {
+        this.tempGladiator.updateValue({ name });
     }
 
     @sequence
@@ -57,5 +58,21 @@ export class GladiatorPage {
     public prevBanner() {
         const banner = Banner.prevBanner(this.tempGladiator.value.banner);
         this.tempGladiator.updateValue({ banner });
+    }
+
+    @sequence
+    public save(): void {
+        this.list.addOrUpdate(this.tempGladiator.value);
+        this.selectedGladiator.setValue(this.tempGladiator.value);
+        this.toggleStatus(true);
+        setTimeout(() => this.toggleStatus(false), 2000);
+    }    
+
+    //
+    // actions
+    //
+
+    public toggleStatus(on: boolean) {
+        this.showStatus = on;
     }
 }

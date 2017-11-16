@@ -2,18 +2,14 @@ import { component, sequence } from 'redux-app';
 import { IIdentifiable } from './iIdentifiable';
 
 /**
- * General purpose repository.
- * Encapsulates storage and modification of a collection of T.
+ * Encapsulates storage and modification of a collection of items.
  */
 @component
-export class Repository<T extends IIdentifiable> {
-
-    // Note: This class can be easily refactored to CRUD from a remote server
-    // using API calls and cache the results locally.
+export class Collection<T extends IIdentifiable> {
 
     public items: T[] = [];
 
-    public add(item: T): void {
+    public add(item: T | T[]): void {
         this.items = this.items.concat(item);
     }
 
@@ -34,5 +30,9 @@ export class Repository<T extends IIdentifiable> {
         } else {
             this.add(item);
         }
+    }
+
+    public remove(item: T): void {
+        this.items = this.items.filter(it => it !== item);
     }
 }

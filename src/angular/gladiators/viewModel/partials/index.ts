@@ -1,2 +1,2 @@
-export * from './gladiatorRepository';
+export * from './gladiatorsList';
 export * from './selectedGladiator';

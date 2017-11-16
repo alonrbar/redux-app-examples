@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { ExampleFrameComponent } from '../../example-frame.component';
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { ArenaPageComponent } from './arenaPage/arenaPage.component';
     ArenaPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,16 +17,36 @@
                 <!-- name -->
                 <div class="form-group">
                     <label for="gladiatorName">Gladiator Name</label>
-                    <input type="text" class="form-control" id="gladiatorName" placeholder="Enter name">
+                    <input type="text" [ngModel]="vm.tempGladiator.value.name" (ngModelChange)="nameChanged($event)" class="form-control" name="gladiatorName"
+                        placeholder="Enter name">
                 </div>
 
                 <!-- banner -->
                 <div class="form-row">
                     <label class="col-3 col-form-label">Banner:</label>
                     <div class="btn-group col-9">
-                        <button type="button" class="btn btn-secondary" (click)="vm.prevBanner()">&lt; Prev</button>
-                        <button type="button" class="btn btn-secondary" (click)="vm.nextBanner()">Next &gt;</button>
+                        <button class="btn btn-secondary" (click)="vm.prevBanner()">&lt; Prev</button>
+                        <button class="btn btn-secondary" (click)="vm.nextBanner()">Next &gt;</button>
                     </div>
+                </div>
+
+                <br>
+
+                <!-- control buttons -->
+                <div class="form-row">
+                    <button class="btn btn-success m-1" (click)="vm.save()">Save</button>
+                    <button class="btn btn-light m-1" (click)="vm.reset()">Cancel</button>
+                </div>
+
+                <br>
+                <br>
+
+                <!-- saved message -->
+                <div class="alert alert-success alert-dismissible fade" [class.show]="vm.showStatus">
+                    Gladiator Saved
+                    <button class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
             </form>
         </div>
