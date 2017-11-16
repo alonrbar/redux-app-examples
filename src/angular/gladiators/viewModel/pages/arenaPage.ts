@@ -62,6 +62,9 @@ export class ArenaPage {
 
     @sequence
     public fight(): void {
+        if (this.list.items.length < 2)
+            return;
+
         if (!this.lifeMeter1 || !this.lifeMeter2) {
             this.prepareForFight();
         }

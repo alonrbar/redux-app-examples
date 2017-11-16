@@ -7,7 +7,11 @@ import { IIdentifiable } from './iIdentifiable';
 @component
 export class Collection<T extends IIdentifiable> {
 
-    public items: T[] = [];
+    public items: T[];
+
+    constructor(items?: T[]) {
+        this.items = items || [];
+    }
 
     public add(item: T | T[]): void {
         this.items = this.items.concat(item);

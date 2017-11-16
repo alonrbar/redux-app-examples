@@ -65,7 +65,7 @@ export class GladiatorPage {
         this.list.addOrUpdate(this.tempGladiator.value);
         this.selectedGladiator.setValue(this.tempGladiator.value);
         this.toggleStatus(true);
-        setTimeout(() => this.toggleStatus(false), 2000);
+        setTimeout(() => this.toggleStatus(false), 1500);
     }    
 
     @sequence
