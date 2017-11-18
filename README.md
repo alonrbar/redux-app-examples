@@ -9,7 +9,7 @@ Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](ht
 
 ### Installtion
 
-```
+```shell
 mkdir redux-app-examples
 cd redux-app-examples
 git init
@@ -20,6 +20,14 @@ npm install
 ### Run the examples
 
 After installation run `npm start` and open `localhost:3000` on your browser.
+
+**TypeError: Cannot read property 'used' of null** - If you get this error when calling `npm start` run the following:
+
+```shell
+git checkout -- package-lock.json
+npm prune
+npm start
+```
 
 ### Examples Source
 
