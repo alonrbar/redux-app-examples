@@ -1,0 +1,30 @@
+<template>
+    <div if.bind="gladiator" class="card gladiator-profile">
+
+        <!-- banner -->
+        <img class="card-img-top bg-light pt-4 gladiator-badge" class.bind="gladiator.banner">
+
+        <div class="card-body">
+            <span class="badge badge-info" title.bind="credits">?</span>
+
+            <!-- name -->
+            <h4 class="card-title mt-1">${gladiator.name}</h4>
+
+            <!-- wins -->
+            <p class="card-text">
+                Wins: ${gladiator.wins}
+            </p>
+        </div>
+    </div>
+
+    <!-- empty gladiator profile -->
+    <div if.bind="!gladiator" class="card gladiator-profile">
+        <img class="card-img-top bg-light pt-4 gladiator-badge banner_empty">
+        <div class="card-body">
+            <span class="badge badge-info" title="Image created by Fantastic from the Noun Project">?</span>
+            <p class="card-text mt-1">
+                <i>No Gladiator</i>
+            </p>
+        </div>
+    </div>
+</template>

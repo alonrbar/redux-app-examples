@@ -1,0 +1,57 @@
+<template class="page">
+
+    <require from="../gladiatorProfile/gladiatorProfile"></require>
+
+    <!-- back button -->
+    <a href="javascript:void(0)" click.delegate="vm.goBack()" class="float-right">Back</a>
+
+    <div class="row">
+
+        <!-- profile preview -->
+        <div class="col-12 col-xl-3" style="min-width: 20em">
+            <gladiator-profile gladiator.bind="vm.tempGladiator.value"></gladiator-profile>
+        </div>
+
+        <!-- edit controls -->
+        <div class="col-12 col-xl-8">
+            <form class="mt-5">
+
+                <!-- name -->
+                <div class="form-group">
+                    <label for="gladiatorName">Gladiator Name</label>
+                    <input type="text" value.one-way="vm.tempGladiator.value.name" keyup.delegate="nameChanged($event)" class="form-control" name="gladiatorName"
+                        placeholder="Enter name">
+                </div>
+
+                <!-- banner -->
+                <div class="form-row">
+                    <label class="col-3 col-form-label">Banner:</label>
+                    <div class="btn-group col-9">
+                        <button class="btn btn-secondary" click.delegate="vm.prevBanner()">&lt; Prev</button>
+                        <button class="btn btn-secondary" click.delegate="vm.nextBanner()">Next &gt;</button>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- control buttons -->
+                <div class="form-row">
+                    <button class="btn btn-success m-1" click.delegate="vm.save()">Save</button>
+                    <button class="btn btn-light m-1" click.delegate="vm.reset()">Cancel</button>
+                    <button class="btn btn-danger m-1" click.delegate="vm.delete()">Delete</button>
+                </div>
+
+                <br>
+                <br>
+
+                <!-- saved message -->
+                <div class="alert alert-success alert-dismissible fade" class.bind="vm.showStatus ? 'show' : ''">
+                    Gladiator Saved
+                    <button class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
