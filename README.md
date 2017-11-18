@@ -2,6 +2,11 @@
 
 Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](https://angular.io) or [Aurelia](http://aurelia.io/). Choose what fits you best.
 
+[![npm version](https://img.shields.io/npm/v/redux-app-examples.svg)](https://www.npmjs.com/package/redux-app-examples)
+[![npm license](https://img.shields.io/npm/l/redux-app-examples.svg)](https://www.npmjs.com/package/redux-app-examples)
+[![dependencies](https://david-dm.org/alonrbar/redux-app-examples.svg)](https://github.com/alonrbar/redux-app-examples)
+[![dependencies](https://david-dm.org/alonrbar/redux-app-examples/dev-status.svg)](https://github.com/alonrbar/redux-app-examples)
+
 ### Installtion
 
 ```
@@ -24,7 +29,7 @@ After installation run `npm start` and open `localhost:3000` on your browser.
 | **Counters with Identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] |
 | **Async Dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] |
 | **Todo List** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] |
-| **Gladiators** - a real world example | [Angular][angular-gladiators] | Coming Soon... |
+| **Gladiators** - a real world example | [Angular][angular-gladiators] | [Aurelia][aurelia-gladiators] |
 
 [Change Log](https://github.com/alonrbar/redux-app-examples/blob/master/CHANGELOG.md)
 
@@ -37,3 +42,4 @@ After installation run `npm start` and open `localhost:3000` on your browser.
   [angular-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/todo
   [aurelia-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/todo
   [angular-gladiators]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/gladiators
+  [aurelia-gladiators]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/gladiators
