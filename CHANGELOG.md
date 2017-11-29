@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.3 - 2017-11-29
+
+- Bug fixes in Gladiators example.
+
 ## 1.3.2 - 2017-11-18
 
 - Troubleshoot "TypeError: Cannot read property 'used' of null".
