@@ -40,7 +40,8 @@ export class GladiatorPage {
 
     @sequence
     public reset(): void {
-        this.tempGladiator.setValue(this.selectedGladiator.value);
+        const shallowClone = Object.assign({}, this.selectedGladiator.value);
+        this.tempGladiator.setValue(shallowClone);
     }
 
     @sequence

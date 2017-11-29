@@ -11,7 +11,7 @@ export class ArenaPage {
     // public properties
     //
 
-    public status: string;
+    public status: string = null;
 
     public gladiator1: Gladiator;
     public lifeMeter1 = 0;
