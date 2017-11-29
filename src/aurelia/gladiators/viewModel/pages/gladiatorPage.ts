@@ -40,8 +40,8 @@ export class GladiatorPage {
 
     @sequence
     public reset(): void {
-        const shallowClone = Object.assign({}, this.selectedGladiator.value);
-        this.tempGladiator.setValue(shallowClone);
+        const gladiatorClone = new Gladiator(this.selectedGladiator.value);
+        this.tempGladiator.setValue(gladiatorClone);
     }
 
     @sequence
@@ -63,7 +63,7 @@ export class GladiatorPage {
 
     @sequence
     public save(): void {
-        this.list.addOrUpdate(this.tempGladiator.value);
+        this.list.update(this.tempGladiator.value);
         this.selectedGladiator.setValue(this.tempGladiator.value);
         this.toggleStatus(true);
         setTimeout(() => this.toggleStatus(false), 1500);

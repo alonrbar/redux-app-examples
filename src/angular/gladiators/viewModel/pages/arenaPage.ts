@@ -93,7 +93,10 @@ export class ArenaPage {
                 // the fight is over
                 const striker = (strikerIndex === 1 ? this.gladiator1 : this.gladiator2);
                 const updatedStriker = Object.assign({}, striker, { wins: striker.wins + 1 });
-                this.list.addOrUpdate(updatedStriker);
+                
+                this.updateFighter(strikerIndex, updatedStriker);
+                this.list.update(updatedStriker);
+
                 this.setStatus(`${striker.name} wins!`);
             } else {
 
@@ -107,8 +110,18 @@ export class ArenaPage {
     // actions
     //
 
-    private setStatus(newStatus: string) {
+    private setStatus(newStatus: string): void {
         this.status = newStatus;
+    }
+
+    private updateFighter(index: number, gladiator: Gladiator): void {
+        if (index === 1) {
+            this.gladiator1 = gladiator;
+        } else if (index === 2) {
+            this.gladiator2 = gladiator;
+        } else {
+            throw new Error("Invalid index. Expected 1 or 2.");
+        }
     }
 
     private setFighters(gladiator1: Gladiator, gladiator2: Gladiator): void {
