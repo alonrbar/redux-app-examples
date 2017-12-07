@@ -1,6 +1,6 @@
 # redux-app-examples
 
-Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](https://angular.io) or [Aurelia](http://aurelia.io/). Choose what fits you best.
+Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](https://angular.io), [Aurelia](http://aurelia.io/) or [React](https://reactjs.org/). Pick whatever view framework you like... and use the same BI code.
 
 [![npm version](https://img.shields.io/npm/v/redux-app-examples.svg)](https://www.npmjs.com/package/redux-app-examples)
 [![npm license](https://img.shields.io/npm/l/redux-app-examples.svg)](https://www.npmjs.com/package/redux-app-examples)
