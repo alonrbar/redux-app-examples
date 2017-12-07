@@ -12,11 +12,12 @@ module.exports = {
         "angular/gladiators": './src/angular/gladiators/main.ts',
         "aurelia/gladiators": './src/aurelia/gladiators/main.ts',
         "angular/sequence": './src/angular/sequence/main.ts',
-        "aurelia/sequence": './src/aurelia/sequence/main.ts',
-        "angular/withId": './src/angular/withId/main.ts',
-        "aurelia/withId": './src/aurelia/withId/main.ts',
+        "aurelia/sequence": './src/aurelia/sequence/main.ts',        
         "angular/todo": './src/angular/todo/main.ts',
-        "aurelia/todo": './src/aurelia/todo/main.ts'
+        "aurelia/todo": './src/aurelia/todo/main.ts',
+        "react/todo": './src/react/todo/main.tsx',
+        "angular/withId": './src/angular/withId/main.ts',
+        "aurelia/withId": './src/aurelia/withId/main.ts'
     },
     devServer: {
         port: 3000,
@@ -33,15 +34,15 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /.ts$/, use: ['ts-loader', 'angular2-template-loader'] },
+            { test: /(\.ts|\.tsx)$/, use: ['ts-loader', 'angular2-template-loader'] },
             { test: /\.html$/, use: ['html-loader'] },
             { test: /(\.css|\.scss)$/, use: ['style-loader', 'css-loader'] },
             { test: /(.png$|.gif$)/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] },
-{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] }
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: [{ loader: "file-loader", query: { name: "res/[name].[ext]" } }] }
         ]
     },
 resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.tsx', '.jsx'],
         modules: [path.resolve("./src"), "node_modules"]
 },
 plugins: [
@@ -59,10 +60,11 @@ plugins: [
     htmlPluginForBundle('aurelia/gladiators'),
     htmlPluginForBundle('angular/sequence'),
     htmlPluginForBundle('aurelia/sequence'),
-    htmlPluginForBundle('angular/withId'),
-    htmlPluginForBundle('aurelia/withId'),
     htmlPluginForBundle('angular/todo'),
     htmlPluginForBundle('aurelia/todo'),
+    htmlPluginForBundle('react/todo'),
+    htmlPluginForBundle('angular/withId'),
+    htmlPluginForBundle('aurelia/withId'),    
     new ProgressBarPlugin({
         clear: true
     })

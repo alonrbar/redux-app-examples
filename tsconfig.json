@@ -2,6 +2,10 @@
     "compileOnSave": true,
     "compilerOptions": {
 
+        // --- input --- //
+
+        "jsx": "react",
+
         // --- output --- //
         
         "declaration": false,
