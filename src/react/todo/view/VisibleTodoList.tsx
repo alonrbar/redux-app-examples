@@ -4,7 +4,7 @@ import { syncOn } from '../../syncOn';
 import { App, VisibleTodoList } from '../state';
 import { TodoView } from './todo';
 
-class TodoListView extends React.Component<any> {
+class VisibleTodoListView extends React.Component<any> {
 
     @connect
     public st: VisibleTodoList;
@@ -20,4 +20,9 @@ class TodoListView extends React.Component<any> {
     }
 }
 
-export default syncOn((app: App) => app.todoList.todos)(TodoListView);
+export default syncOn((app: App) => {
+    return {
+        todos: app.todoList.todos,
+        filter: app.visibilityFilter.value
+    };
+})(VisibleTodoListView);
