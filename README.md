@@ -49,6 +49,6 @@ npm start
   [aurelia-sequence]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/sequence
   [angular-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/todo
   [aurelia-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/todo
-  [react-todo]: https://github.com/alonrbar/redux-app-examples/tree/develop/src/react/todo
+  [react-todo]: https://github.com/alonrbar/redux-app-examples/tree/master/src/react/todo
   [angular-gladiators]: https://github.com/alonrbar/redux-app-examples/tree/master/src/angular/gladiators
   [aurelia-gladiators]: https://github.com/alonrbar/redux-app-examples/tree/master/src/aurelia/gladiators
