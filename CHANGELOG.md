@@ -1,8 +1,9 @@
 # Change Log
 
-## Unreleased
+## 1.4.0 - 2017-12-21
 
-- First React example.
+- First (experimental) React example.
+- Update and lock dependency versions.
 
 ## 1.3.3 - 2017-11-29
 

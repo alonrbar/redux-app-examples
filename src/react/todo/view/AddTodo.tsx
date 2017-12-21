@@ -8,26 +8,22 @@ export const AddTodoView = ({ addTodo }: AddTodoProps) => {
     let input: HTMLInputElement;
 
     return (
-        <div>
-            <form
-                onSubmit={e => {
-                    e.preventDefault();
-                    if (!input.value.trim()) {
-                        return;
-                    }
-                    addTodo(input.value);
-                    input.value = '';
+        <form
+            onSubmit={e => {
+                e.preventDefault();
+                if (!input.value.trim()) {
+                    return;
+                }
+                addTodo(input.value);
+                input.value = '';
+            }}
+        >
+            <input
+                ref={node => {
+                    input = node;
                 }}
-            >
-                <input
-                    ref={node => {
-                        input = node;
-                    }}
-                />
-                <button type="submit">
-                    Add Todo
-                </button>
-            </form>
-        </div>
+            />&nbsp;
+            <button type="submit">Add Todo</button>
+        </form>
     );
 };

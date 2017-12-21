@@ -1,6 +1,6 @@
 # redux-app-examples
 
-Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](https://angular.io), [Aurelia](http://aurelia.io/) or [React](https://reactjs.org/). Pick whatever view framework you like... and use the same BI code.
+Examples of [redux-app](https://github.com/alonrbar/redux-app) with [Angular](https://angular.io), [Aurelia](http://aurelia.io/) and [React](https://reactjs.org/). Pick whatever view framework you like (same BI code used across frameworks)...
 
 [![npm version](https://img.shields.io/npm/v/redux-app-examples.svg)](https://www.npmjs.com/package/redux-app-examples)
 [![npm license](https://img.shields.io/npm/l/redux-app-examples.svg)](https://www.npmjs.com/package/redux-app-examples)
@@ -33,11 +33,11 @@ npm start
 
 | Example | Angular | Aurelia | React |
 |---------|---------|---------|-------|
-| **Counters** - a basic example | [Angular][angular-counters] | [Aurelia][aurelia-counters] | todo... |
-| **Counters with Identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] | todo... |
-| **Async Dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] | todo... |
-| **Todo List** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] | [React][react-todo] |
-| **Gladiators** - a real world example | [Angular][angular-gladiators] | [Aurelia][aurelia-gladiators] | todo... |
+| **Counters** - a basic example | [Angular][angular-counters] | [Aurelia][aurelia-counters] | - |
+| **Counters with Identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] | - |
+| **Async Dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] | - |
+| **Todo List** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] | [React][react-todo] (Experimental) |
+| **Gladiators** - a real world example | [Angular][angular-gladiators] | [Aurelia][aurelia-gladiators] | - |
 
 [Change Log](https://github.com/alonrbar/redux-app-examples/blob/master/CHANGELOG.md)
 
