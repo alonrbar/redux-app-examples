@@ -24,7 +24,7 @@ module.exports = {
         hot: true,
         stats: "minimal"
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     output: {
         path: path.resolve('./dist'),
         filename: '[name]/main.js',

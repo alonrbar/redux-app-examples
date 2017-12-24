@@ -1,6 +1,6 @@
 {
   "name": "redux-app-examples",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Examples of redux-app with Angular, Aurelia and React.",
   "keywords": [
     "redux-app",
@@ -29,6 +29,12 @@
   "author": "Alon Bar",
   "license": "MIT",
   "dependencies": {
+    "@angular/common": "5.1.2",
+    "@angular/compiler": "5.1.2",
+    "@angular/core": "5.1.2",
+    "@angular/forms": "5.1.2",
+    "@angular/platform-browser": "5.1.2",
+    "@angular/platform-browser-dynamic": "5.1.2",
     "aurelia-bootstrapper": "2.1.1",
     "aurelia-framework": "1.1.5",
     "core-js": "2.5.3",
@@ -36,19 +42,12 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-redux": "5.0.6",
-    "redux-app": "1.10.1",
+    "redux-app": "1.10.3",
     "redux-devtools-extension": "2.13.2",
-    "reflect-metadata": "0.1.10",
     "rxjs": "5.5.5",
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@angular/common": "5.1.2",
-    "@angular/compiler": "5.1.2",
-    "@angular/core": "5.1.2",
-    "@angular/forms": "5.1.2",
-    "@angular/platform-browser": "5.1.2",
-    "@angular/platform-browser-dynamic": "5.1.2",
     "@types/node": "8.5.2",
     "@types/react": "16.0.31",
     "@types/react-dom": "16.0.3",

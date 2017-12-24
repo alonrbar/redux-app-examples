@@ -1,4 +1,4 @@
-import "reflect-metadata";
+require('../polyfill');
 import { bootstrap } from 'aurelia-bootstrapper';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import "aurelia-loader-webpack";

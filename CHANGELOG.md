@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.5.0 - 2017-12-24
+
+- IE support.
+
 ## 1.4.0 - 2017-12-21
 
 - First (experimental) React example.
