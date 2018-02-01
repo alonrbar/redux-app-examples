@@ -5,7 +5,7 @@ import { GladiatorsList } from '../partials';
 import { Route, Router } from '../router';
 
 @component
-export class ArenaPage {
+export class ArenaPageState {
 
     //
     // public properties

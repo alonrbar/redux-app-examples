@@ -1,11 +1,9 @@
-import { customElement } from 'aurelia-framework';
 import * as React from 'react';
 import { connect } from 'redux-app';
 import { MainPageState } from '../state';
 import './mainPage.css';
 import { GladiatorThumbnail } from './gladiatorThumbnail';
 
-@customElement('main-page')
 export class MainPage extends React.Component {
 
     @connect
@@ -21,8 +19,10 @@ export class MainPage extends React.Component {
                         <h5>Top Fighters</h5>
                         <div className="list-group">
                             {this.st.topGladiators.map(gladiator =>
-                                <GladiatorThumbnail key={gladiator.id} gladiator={gladiator} onClick={() => this.st.goToGladiatorPage(gladiator)} className="m-2">
-                                </GladiatorThumbnail>
+                                <div key={gladiator.id} className="m-2">
+                                    <GladiatorThumbnail gladiator={gladiator} onClick={() => this.st.goToGladiatorPage(gladiator)}>
+                                    </GladiatorThumbnail>
+                                </div>
                             )}
                         </div>
                     </div>}

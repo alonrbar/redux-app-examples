@@ -1,4 +1,3 @@
-import { bindable, customElement } from 'aurelia-framework';
 import * as React from 'react';
 import '../assets/style/gladiator-banner.css';
 import { Banner, Gladiator } from '../model';
@@ -7,15 +6,13 @@ import './gladiatorThumbnail.css';
 export interface GladiatorThumbnailProps {
     gladiator: Gladiator;
     onClick: () => void;
-    className: any;
 }
 
-@customElement('gladiator-thumbnail')
 export class GladiatorThumbnail extends React.Component<GladiatorThumbnailProps> {
 
     public render() {
         return (
-            <div className="card gladiator-thumbnail" title={this.props.gladiator.name}>
+            <div className="card gladiator-thumbnail" title={this.props.gladiator.name} onClick={this.props.onClick}>
 
                 {/*  banner */}
                 <img className={"card-img bg-light gladiator-banner " + this.props.gladiator.banner} />

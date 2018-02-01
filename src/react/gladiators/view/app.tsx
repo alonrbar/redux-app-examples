@@ -1,14 +1,15 @@
-import { customElement } from 'aurelia-framework';
 import * as React from 'react';
 import { connect, LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import { autoSync } from '../../autoSync';
 import { ExampleFrame } from '../../ExampleFrame';
-import { GladiatorsAppState, Route } from '../state';
+import { GladiatorsAppState, Route, Router } from '../state';
 import './app.css';
+import { ArenaPage } from './arenaPage';
+import { GladiatorPage } from './gladiatorPage';
 import { MainPage } from './mainPage';
 
-@autoSync(GladiatorsAppState)
+@autoSync(Router)
 export class App extends React.Component {
 
   public Route = Route;
@@ -23,8 +24,8 @@ export class App extends React.Component {
 
           {/* our primitive router */}
           {this.vm.router.currentRoute === Route.MainPage && <MainPage />}
-          {/* <gladiator-page if.bind="vm.router.currentRoute === Route.GladiatorPage"></gladiator-page>
-          <arena-page if.bind="vm.router.currentRoute === Route.ArenaPage"></arena-page> */}
+          {this.vm.router.currentRoute === Route.GladiatorPage && <GladiatorPage />}
+          {this.vm.router.currentRoute === Route.ArenaPage && <ArenaPage />}
 
         </div>
       </ExampleFrame>

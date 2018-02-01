@@ -5,7 +5,7 @@ import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
 
 @component
-export class GladiatorPage {
+export class GladiatorPageState {
 
     //
     // public members

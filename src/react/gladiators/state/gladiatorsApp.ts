@@ -1,6 +1,6 @@
 import { component } from 'redux-app';
 import { Gladiator } from '../model';
-import { ArenaPage, GladiatorPage, MainPageState } from './pages';
+import { ArenaPageState, GladiatorPageState, MainPageState } from './pages';
 import { GladiatorsList, SelectedGladiator } from './partials';
 import { Router } from './router';
 
@@ -11,8 +11,8 @@ export class GladiatorsAppState {
 
     public pages = {
         main: new MainPageState(),
-        gladiator: new GladiatorPage(),
-        arena: new ArenaPage()
+        gladiator: new GladiatorPageState(),
+        arena: new ArenaPageState()
     };
 
     public partials = {
