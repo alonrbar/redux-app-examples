@@ -36,7 +36,7 @@ npm start
 | **Counters** - a basic example | [Angular][angular-counters] | [Aurelia][aurelia-counters] | - |
 | **Counters with Identity** - using the `withId` decorator, a "mini ORM" feature | [Angular][angular-withId] | [Aurelia][aurelia-withId] | - |
 | **Async Dogs** - using the `sequence` decorator, an async pattern that does not require thunks | [Angular][angular-sequence] | [Aurelia][aurelia-sequence] | - |
-| **Todo List** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] | [React][react-todo] (Experimental) |
+| **Todo List** - your familiar todo list example, this time with redux-app | [Angular][angular-todo] | [Aurelia][aurelia-todo] | [React][react-todo] |
 | **Gladiators** - a real world example | [Angular][angular-gladiators] | [Aurelia][aurelia-gladiators] | - |
 
 [Change Log](https://github.com/alonrbar/redux-app-examples/blob/master/CHANGELOG.md)

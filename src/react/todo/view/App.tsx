@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
-import ExampleFrame from '../../ExampleFrame';
+import { ExampleFrame } from '../../ExampleFrame';
 import { App } from '../state';
 import { AddTodoView } from './AddTodo';
-import Footer from './Footer';
-import VisibleTodoListView from './VisibleTodoList';
+import { Footer } from './Footer';
+import { VisibleTodoListView } from './VisibleTodoList';
 
 export default class AppView extends React.Component {
 

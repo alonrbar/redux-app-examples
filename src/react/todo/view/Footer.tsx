@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
+import { autoSync } from '../../autoSync';
 import { syncOn } from '../../syncOn';
 import { App, VisibilityFilter, VisibilityFilterValue } from '../state';
 import Link from './Link';
 
-class Footer extends React.Component<any> {
+@autoSync(VisibilityFilterValue)
+export class Footer extends React.Component<any> {
 
     @connect
     public filter: VisibilityFilterValue;
@@ -27,5 +29,3 @@ class Footer extends React.Component<any> {
         </p>;
     }
 }
-
-export default syncOn((app: App) => app.visibilityFilter.value)(Footer);

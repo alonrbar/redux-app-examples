@@ -1,0 +1,25 @@
+.gladiator-thumbnail {
+    position: relative;
+    max-width: 8em;
+    height: 10em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.gladiator-thumbnail .card-img-overlay {
+    padding: 5px;
+}
+
+.gladiator-thumbnail .card-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.gladiator-thumbnail .gladiator-name {
+    max-width: 6em;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    word-wrap: normal;
+}

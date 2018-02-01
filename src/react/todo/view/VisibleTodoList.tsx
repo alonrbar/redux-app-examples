@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
+import { autoSync } from '../../autoSync';
 import { syncOn } from '../../syncOn';
 import { App, VisibleTodoList } from '../state';
 import { TodoView } from './todo';
 
-class VisibleTodoListView extends React.Component<any> {
+@autoSync(VisibleTodoList)
+export class VisibleTodoListView extends React.Component<any> {
 
     @connect
     public st: VisibleTodoList;
@@ -19,10 +21,3 @@ class VisibleTodoListView extends React.Component<any> {
         );
     }
 }
-
-export default syncOn((app: App) => {
-    return {
-        todos: app.todoList.todos,
-        filter: app.visibilityFilter.value
-    };
-})(VisibleTodoListView);
