@@ -9,7 +9,6 @@ var debounce = require('lodash.debounce');
 export class GladiatorPage extends React.Component {
 
   public nameChanged = debounce((name: string) => {
-    // https://stackoverflow.com/a/42845938/999461
     this.vm.setName(name);
   }, 300);
 

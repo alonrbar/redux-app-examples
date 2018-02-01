@@ -7,7 +7,6 @@ var debounce = require('lodash.debounce');
 export class GladiatorPageComponent {
 
   public nameChanged = debounce((e: Event) => {
-    // https://stackoverflow.com/a/42845938/999461
     this.vm.setName((e.target as HTMLInputElement).value);
   }, 300);
 
