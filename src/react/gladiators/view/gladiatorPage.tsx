@@ -3,11 +3,12 @@ import { connect } from 'redux-app';
 import { autoSync } from '../../autoSync';
 import { GladiatorPageState } from '../state';
 import { GladiatorProfile } from './GladiatorProfile';
+import { TextInput } from './TextInput';
 var debounce = require('lodash.debounce');
 
 class GladiatorPage extends React.Component<GladiatorPageState> {
 
-  public nameChanged = debounce((name: string) => {
+  public setName = debounce((name: string) => {
     this.props.setName(name);
   }, 300);
 
@@ -16,6 +17,7 @@ class GladiatorPage extends React.Component<GladiatorPageState> {
   }
 
   public render() {
+
     return (
       <div className="page">
 
@@ -36,7 +38,11 @@ class GladiatorPage extends React.Component<GladiatorPageState> {
               {/* name */}
               <div className="form-group">
                 <label>Gladiator Name</label>
-                <input type="text" value={(this.props.tempGladiator && this.props.tempGladiator.name) || ''} onChange={e => this.nameChanged(e.target.value)} className="form-control" placeholder="Enter name" />
+                <TextInput 
+                  value={this.props.tempGladiator && this.props.tempGladiator.name} 
+                  onChange={(name: string) => this.setName(name)} 
+                  className="form-control" 
+                  placeholder="Enter name" />
               </div>
 
               {/* banner */}
