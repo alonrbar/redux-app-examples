@@ -2,7 +2,7 @@ import { component } from 'redux-app';
 import { TodoState } from './todo';
 
 @component
-export class TodoList {
+export class TodoListState {
 
     public todos: TodoState[] = [];
 

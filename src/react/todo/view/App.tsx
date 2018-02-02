@@ -1,26 +1,25 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
+import { autoSync } from '../../autoSync';
 import { ExampleFrame } from '../../ExampleFrame';
-import { App } from '../state';
-import { AddTodoView } from './AddTodo';
+import { AppState } from '../state';
+import { AddTodo } from './AddTodo';
 import { Footer } from './Footer';
 import { VisibleTodoList } from './VisibleTodoList';
 
-export default class AppView extends React.Component {
+const App: React.SFC<AppState> = (props) => (
 
-    @connect
-    public app: App;
-
-    public render() {
-        return <ExampleFrame title={this.app.title} subtitle={this.app.subtitle}>
-            <div className="card mt-5 w-50">
-                <div className="card-body">
-                    <AddTodoView addTodo={txt => this.app.todoList.addTodo(txt)} />
-                    <br />
-                    <VisibleTodoList />
-                    <Footer />
-                </div>
+    <ExampleFrame title={props.title} subtitle={props.subtitle}>
+        <div className="card mt-5 w-50">
+            <div className="card-body">
+                <AddTodo addTodo={txt => props.todoList.addTodo(txt)} />
+                <br />
+                <VisibleTodoList />
+                <Footer />
             </div>
-        </ExampleFrame>;
-    }
-}
+        </div>
+    </ExampleFrame>
+);
+
+const connected = autoSync(AppState)(App);
+export { connected as App };

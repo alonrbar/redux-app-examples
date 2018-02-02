@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
 import { autoSync } from '../../autoSync';
-import { App, VisibleTodoListState } from '../state';
+import { AppState, VisibleTodoListState } from '../state';
 import { Todo } from './Todo';
 
 const VisibleTodoList: React.SFC<VisibleTodoListState> = (props) => (

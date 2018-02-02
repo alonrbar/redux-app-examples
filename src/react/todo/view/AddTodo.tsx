@@ -4,7 +4,7 @@ interface AddTodoProps {
     addTodo: (text: string) => void;
 }
 
-export const AddTodoView = ({ addTodo }: AddTodoProps) => {
+export const AddTodo = ({ addTodo }: AddTodoProps) => {
     let input: HTMLInputElement;
 
     return (

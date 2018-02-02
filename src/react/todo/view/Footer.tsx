@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
 import { autoSync } from '../../autoSync';
-import { App, VisibilityFilter, VisibilityFilterValue } from '../state';
+import { AppState, VisibilityFilter, VisibilityFilterValue } from '../state';
 import Link from './Link';
 
 const Footer: React.SFC<VisibilityFilterValue> = (props) => (<p>

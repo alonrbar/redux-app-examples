@@ -1,5 +1,5 @@
 import { component, connect, computed, noDispatch } from 'redux-app';
-import { TodoList } from './todoList';
+import { TodoListState } from './todoList';
 import { VisibilityFilterValue, VisibilityFilter } from './visibilityFilter';
 import { TodoState } from './todo';
 
@@ -21,7 +21,7 @@ export class VisibleTodoListState {
     }
 
     @connect
-    private todoList: TodoList = null;
+    private todoList: TodoListState = null;
 
     @connect
     private filter: VisibilityFilterValue = null;
