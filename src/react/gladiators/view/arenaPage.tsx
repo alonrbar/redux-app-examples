@@ -2,16 +2,12 @@ import { connect } from 'redux-app';
 import { ArenaPageState } from '../state';
 import * as React from 'react';
 import { autoSync } from '../../autoSync';
-import { GladiatorProfile } from './gladiatorProfile';
+import { GladiatorProfile } from './GladiatorProfile';
 
-@autoSync(ArenaPageState)
-export class ArenaPage extends React.Component {
-
-    @connect
-    public vm: ArenaPageState;
+class ArenaPage extends React.Component<ArenaPageState> {
 
     public componentDidMount() {
-        this.vm.prepareForFight();
+        this.props.prepareForFight();
     }
 
     public render() {
@@ -21,7 +17,7 @@ export class ArenaPage extends React.Component {
                 {/* back button */}
                 <div className="row">
                     <div className="col d-flex justify-content-end">
-                        <a href="javascript:void(0)" onClick={() => this.vm.goBack()}>Back</a>
+                        <a href="javascript:void(0)" onClick={() => this.props.goBack()}>Back</a>
                     </div>
                 </div>
                 <br />
@@ -32,14 +28,14 @@ export class ArenaPage extends React.Component {
                     {/* contender 1 */}
                     <div className="col-3">
                         <div className="row d-flex justify-content-center">
-                            <GladiatorProfile gladiator={this.vm.gladiator1}></GladiatorProfile>
+                            <GladiatorProfile gladiator={this.props.gladiator1}></GladiatorProfile>
                         </div>
                         <br />
 
                         {/* life */}
                         <div className="row">
                             <div className="progress w-100">
-                                <div className="progress-bar bg-success" role="progressbar" style={{ width: this.vm.lifeMeter1 + '%' }}></div>
+                                <div className="progress-bar bg-success" role="progressbar" style={{ width: this.props.lifeMeter1 + '%' }}></div>
                             </div>
                         </div>
                     </div>
@@ -48,12 +44,12 @@ export class ArenaPage extends React.Component {
                     <div className="col-3 align-self-center" style={{ height: '20em' }}>
                         <div className="row h-25">
                             <div className="col d-flex justify-content-center align-items-center">
-                                {this.vm.status}
+                                {this.props.status}
                             </div>
                         </div>
                         <div className="row h-50">
                             <div className="col align-self-center d-flex justify-content-center">
-                                <button className="btn btn-danger" onClick={() => this.vm.fight()}>Fight!!</button>
+                                <button className="btn btn-danger" onClick={() => this.props.fight()}>Fight!!</button>
                             </div>
                         </div>
                         <div className="row h-25"></div>
@@ -62,14 +58,14 @@ export class ArenaPage extends React.Component {
                     {/* contender 2 */}
                     <div className="col-3">
                         <div className="row d-flex justify-content-center">
-                            <GladiatorProfile gladiator={this.vm.gladiator2}></GladiatorProfile>
+                            <GladiatorProfile gladiator={this.props.gladiator2}></GladiatorProfile>
                         </div>
                         <br />
 
                         {/* life */}
                         <div className="row">
                             <div className="progress w-100">
-                                <div className="progress-bar bg-success" role="progressbar" style={{ width: this.vm.lifeMeter2 + '%' }}></div>
+                                <div className="progress-bar bg-success" role="progressbar" style={{ width: this.props.lifeMeter2 + '%' }}></div>
                             </div>
                         </div>
                     </div>
@@ -78,3 +74,6 @@ export class ArenaPage extends React.Component {
         );
     }
 }
+
+const connected = autoSync(ArenaPageState)(ArenaPage);
+export { connected as ArenaPage };

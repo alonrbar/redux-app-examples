@@ -6,8 +6,7 @@
       "array"
     ],
     "arrow-parens": [
-      true,
-      "ban-single-arg-parens"
+      false
     ],
     "curly": false,
     "eofline": false,

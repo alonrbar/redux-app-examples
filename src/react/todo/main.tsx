@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import { App } from './state';
-import AppView from './view/app';
+import AppView from './view/App';
 
 ReduxApp.options.logLevel = LogLevel.Debug;
 const app = ReduxApp.createApp(new App(), devToolsEnhancer(undefined));

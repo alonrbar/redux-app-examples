@@ -1,13 +1,13 @@
 import { component, connect, computed, noDispatch } from 'redux-app';
 import { TodoList } from './todoList';
 import { VisibilityFilterValue, VisibilityFilter } from './visibilityFilter';
-import { Todo } from './todo';
+import { TodoState } from './todo';
 
 @component
-export class VisibleTodoList {
+export class VisibleTodoListState {
 
     @computed
-    public get visibleTodos(): Todo[] {
+    public get visibleTodos(): TodoState[] {
         switch (this.filter.value) {
             case VisibilityFilter.ShowAll:
                 return this.todoList.todos;

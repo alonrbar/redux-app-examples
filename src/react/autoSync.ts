@@ -1,35 +1,51 @@
-import { connect } from 'react-redux';
+import { ComponentType } from 'react';
+import { connect, Omit } from 'react-redux';
 import { ReduxApp } from 'redux-app';
 
-// tslint:disable:ban-types
+// tslint:disable:ban-types callable-types unified-signatures
 
-interface IComponentState {
-    _v: number;
-    _component: any;
+export function getMethods(obj: object | Function) {
+    if (!obj)
+        return undefined;
+
+    var proto: any;
+    if (typeof obj === 'object') {
+        proto = Object.getPrototypeOf(obj);
+    } else if (typeof obj === 'function') {
+        proto = obj.prototype;
+    } else {
+        throw new Error("Expected an object or a function. Got: " + obj);
+    }
+
+    if (!proto)
+        return undefined;
+
+    var methods: any = {};
+    for (let key of Object.keys(proto)) {
+
+        // avoid invoking getters
+        var desc = Object.getOwnPropertyDescriptor(proto, key);
+        var hasGetter = desc && typeof desc.get === 'function';
+
+        if (!hasGetter && typeof proto[key] === 'function')
+            methods[key] = proto[key].bind(obj);
+    }
+
+    return methods;
 }
 
-function autoSync<T extends Function>(componentType: T): ClassDecorator {
-    let state: IComponentState = {
-        _v: 0,
-        _component: undefined
-    };
+export interface Constructor<T> {
+    new(...args: any[]): T;
+}
 
+export type SyncedComponent<TStateProps, TOwnProps extends TStateProps> = ComponentType<Omit<TOwnProps, keyof TStateProps>>;
+
+export interface AutoSyncEnhancer<TStateProps> {
+    <TOwnProps extends TStateProps>(component: ComponentType<TOwnProps>): SyncedComponent<TStateProps, TOwnProps>;
+}
+export function autoSync<T>(stateType: Constructor<T>): AutoSyncEnhancer<T> {
     return connect(() => {
-        
-        // get component
-        const comp = ReduxApp.getComponent(componentType);
-        state = Object.assign({}, state, { _component: comp });
-
-        // check for changes
-        const isChanged = ReduxApp.wasComponentChanged(comp);
-        if (isChanged) {
-            state = Object.assign({}, state, { _v: state._v + 1 });
-            return state;
-        } else {
-            return state;
-        }
-        
+        const comp = ReduxApp.getComponent(stateType);
+        return Object.assign({}, comp, getMethods(comp));
     }) as any;
 }
-
-export { autoSync };

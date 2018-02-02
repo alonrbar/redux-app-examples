@@ -8,26 +8,22 @@ export interface GladiatorThumbnailProps {
     onClick: () => void;
 }
 
-export class GladiatorThumbnail extends React.Component<GladiatorThumbnailProps> {
+export const GladiatorThumbnail: React.SFC<GladiatorThumbnailProps> = (props) => (
 
-    public render() {
-        return (
-            <div className="card gladiator-thumbnail" title={this.props.gladiator.name} onClick={this.props.onClick}>
+    <div className="card gladiator-thumbnail" title={props.gladiator.name} onClick={props.onClick}>
 
-                {/*  banner */}
-                <img className={"card-img bg-light gladiator-banner " + this.props.gladiator.banner} />
+        {/*  banner */}
+        <img className={"card-img bg-light gladiator-banner " + props.gladiator.banner} />
 
-                <div className="card-img-overlay">
-                    <div className="card-bottom">
+        <div className="card-img-overlay">
+            <div className="card-bottom">
 
-                        {/* name */}
-                        <span className="float-left gladiator-name">{this.props.gladiator.name}</span>
+                {/* name */}
+                <span className="float-left gladiator-name">{props.gladiator.name}</span>
 
-                        {/* wins */}
-                        <span className="float-right badge badge-warning">{this.props.gladiator.wins}</span>
-                    </div>
-                </div>
+                {/* wins */}
+                <span className="float-right badge badge-warning">{props.gladiator.wins}</span>
             </div>
-        );
-    }
-}
+        </div>
+    </div>
+);

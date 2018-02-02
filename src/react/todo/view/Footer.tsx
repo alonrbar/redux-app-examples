@@ -1,31 +1,25 @@
 import * as React from 'react';
 import { connect } from 'redux-app';
 import { autoSync } from '../../autoSync';
-import { syncOn } from '../../syncOn';
 import { App, VisibilityFilter, VisibilityFilterValue } from '../state';
 import Link from './Link';
 
-@autoSync(VisibilityFilterValue)
-export class Footer extends React.Component<any> {
+const Footer: React.SFC<VisibilityFilterValue> = (props) => (<p>
+    Show:
+    {' '}
+    <Link active={props.value === VisibilityFilter.ShowAll} onClick={() => props.setValue(VisibilityFilter.ShowAll)}>
+        All
+    </Link>
+    {', '}
+    <Link active={props.value === VisibilityFilter.ShowActive} onClick={() => props.setValue(VisibilityFilter.ShowActive)}>
+        Active
+    </Link>
+    {', '}
+    <Link active={props.value === VisibilityFilter.ShowCompleted} onClick={() => props.setValue(VisibilityFilter.ShowCompleted)}>
+        Completed
+    </Link>
+</p>
+);
 
-    @connect
-    public filter: VisibilityFilterValue;
-
-    public render() {
-        return <p>
-            Show:
-            {' '}
-            <Link active={this.filter.value === VisibilityFilter.ShowAll} onClick={() => this.filter.setValue(VisibilityFilter.ShowAll)}>
-                All
-            </Link>
-            {', '}
-            <Link active={this.filter.value === VisibilityFilter.ShowActive} onClick={() => this.filter.setValue(VisibilityFilter.ShowActive)}>
-                Active
-            </Link>
-            {', '}
-            <Link active={this.filter.value === VisibilityFilter.ShowCompleted} onClick={() => this.filter.setValue(VisibilityFilter.ShowCompleted)}>
-                Completed
-            </Link>
-        </p>;
-    }
-}
+const connected = autoSync(VisibilityFilterValue)(Footer);
+export { connected as Footer };

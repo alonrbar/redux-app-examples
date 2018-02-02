@@ -3,32 +3,24 @@ import { connect, LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import { autoSync } from '../../autoSync';
 import { ExampleFrame } from '../../ExampleFrame';
-import { GladiatorsAppState, Route, Router } from '../state';
+import { Route, Router } from '../state';
 import './app.css';
-import { ArenaPage } from './arenaPage';
-import { GladiatorPage } from './gladiatorPage';
-import { MainPage } from './mainPage';
+import { ArenaPage } from './ArenaPage';
+import { GladiatorPage } from './GladiatorPage';
+import { MainPage } from './MainPage';
 
-@autoSync(Router)
-export class App extends React.Component {
+const App: React.SFC<Router> = (props) => (
+  <ExampleFrame title="Gladiators" subtitle="A real world application">
+    <div className="card mt-5 w-100 p-3">
 
-  public Route = Route;
+      {/* our primitive router */}
+      {props.currentRoute === Route.MainPage && <MainPage />}
+      {props.currentRoute === Route.GladiatorPage && <GladiatorPage />}
+      {props.currentRoute === Route.ArenaPage && <ArenaPage />}
 
-  @connect
-  public vm: GladiatorsAppState;
+    </div>
+  </ExampleFrame>
+);
 
-  public render() {
-    return (
-      <ExampleFrame title="Gladiators" subtitle="A real world application">
-        <div className="card mt-5 w-100 p-3">
-
-          {/* our primitive router */}
-          {this.vm.router.currentRoute === Route.MainPage && <MainPage />}
-          {this.vm.router.currentRoute === Route.GladiatorPage && <GladiatorPage />}
-          {this.vm.router.currentRoute === Route.ArenaPage && <ArenaPage />}
-
-        </div>
-      </ExampleFrame>
-    );
-  }
-}
+const ConnectedApp = autoSync(Router)(App);
+export { ConnectedApp as App };

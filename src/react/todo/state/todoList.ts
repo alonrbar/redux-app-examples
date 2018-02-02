@@ -1,13 +1,13 @@
 import { component } from 'redux-app';
-import { Todo } from './todo';
+import { TodoState } from './todo';
 
 @component
 export class TodoList {
 
-    public todos: Todo[] = [];
+    public todos: TodoState[] = [];
 
     public addTodo(text: string): void {
-        this.todos = this.todos.concat([new Todo(text)]);
+        this.todos = this.todos.concat([new TodoState(text)]);
     }
 
     public toggleTodo(id: number): void {

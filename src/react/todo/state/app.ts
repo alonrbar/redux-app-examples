@@ -1,7 +1,7 @@
 import { component } from 'redux-app';
 import { TodoList } from './todoList';
 import { VisibilityFilter, VisibilityFilterValue } from './visibilityFilter';
-import { VisibleTodoList } from './visibleTodoList';
+import { VisibleTodoListState } from './visibleTodoList';
 
 @component
 export class App {
@@ -13,6 +13,6 @@ export class App {
     public visibilityFilter = new VisibilityFilterValue(VisibilityFilter.ShowAll);
 
     public partials = {
-        visibleTodos: new VisibleTodoList()
+        visibleTodos: new VisibleTodoListState()
     };
 }

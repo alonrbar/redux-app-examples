@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Todo } from '../state';
+import { TodoState } from '../state';
 
 interface TodoProps {
-    todo: Todo;
+    todo: TodoState;
     onClick: () => void;
 }
 
-export const TodoView = ({ onClick, todo }: TodoProps) => (
+export const Todo = ({ onClick, todo }: TodoProps) => (
     <li
         onClick={onClick}
         style={{

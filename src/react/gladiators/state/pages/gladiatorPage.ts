@@ -1,4 +1,4 @@
-import { component, connect, sequence, withId } from 'redux-app';
+import { component, computed, connect, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorsList, SelectedGladiator } from '../partials';
@@ -13,8 +13,13 @@ export class GladiatorPageState {
 
     public showStatus = false;
 
+    @computed
+    public get tempGladiator() {
+        return this._tempGladiator.value;
+    }
+
     @withId
-    public tempGladiator = new Value<Gladiator>();
+    private _tempGladiator = new Value<Gladiator>();
 
     //
     // private members
@@ -41,30 +46,30 @@ export class GladiatorPageState {
     @sequence
     public reset(): void {
         const gladiatorClone = new Gladiator(this.selectedGladiator.value);
-        this.tempGladiator.setValue(gladiatorClone);
+        this._tempGladiator.setValue(gladiatorClone);
     }
 
     @sequence
     public setName(name: string): void {
-        this.tempGladiator.updateValue({ name });
+        this._tempGladiator.updateValue({ name });
     }
 
     @sequence
     public nextBanner() {
-        const banner = Banner.nextBanner(this.tempGladiator.value.banner);
-        this.tempGladiator.updateValue({ banner });
+        const banner = Banner.nextBanner(this._tempGladiator.value.banner);
+        this._tempGladiator.updateValue({ banner });
     }
 
     @sequence
     public prevBanner() {
-        const banner = Banner.prevBanner(this.tempGladiator.value.banner);
-        this.tempGladiator.updateValue({ banner });
+        const banner = Banner.prevBanner(this._tempGladiator.value.banner);
+        this._tempGladiator.updateValue({ banner });
     }
 
     @sequence
     public save(): void {
-        this.list.update(this.tempGladiator.value);
-        this.selectedGladiator.setValue(this.tempGladiator.value);
+        this.list.update(this._tempGladiator.value);
+        this.selectedGladiator.setValue(this._tempGladiator.value);
         this.toggleStatus(true);
         setTimeout(() => this.toggleStatus(false), 1500);
     }    

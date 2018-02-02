@@ -1,1 +1,0 @@
-export { connect as syncOn } from 'react-redux';

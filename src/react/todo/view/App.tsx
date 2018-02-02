@@ -4,7 +4,7 @@ import { ExampleFrame } from '../../ExampleFrame';
 import { App } from '../state';
 import { AddTodoView } from './AddTodo';
 import { Footer } from './Footer';
-import { VisibleTodoListView } from './VisibleTodoList';
+import { VisibleTodoList } from './VisibleTodoList';
 
 export default class AppView extends React.Component {
 
@@ -17,7 +17,7 @@ export default class AppView extends React.Component {
                 <div className="card-body">
                     <AddTodoView addTodo={txt => this.app.todoList.addTodo(txt)} />
                     <br />
-                    <VisibleTodoListView />
+                    <VisibleTodoList />
                     <Footer />
                 </div>
             </div>
