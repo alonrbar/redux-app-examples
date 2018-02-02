@@ -32,6 +32,10 @@ export class TextInput extends React.Component<TextInputProps, TextInputViewStat
         this.handleChange = this.handleChange.bind(this);
     }
 
+    public componentWillReceiveProps(nextProps: TextInputProps) {
+        this.setState({ value: nextProps.value });
+    }
+
     public handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         const text = e.target.value;
         this.setState({ value: text }, () => {
@@ -41,11 +45,11 @@ export class TextInput extends React.Component<TextInputProps, TextInputViewStat
 
     public render() {
         return (
-            <input 
-                type="text" 
-                value={this.state.value || this.props.value || ''} 
+            <input
+                type="text"
+                value={this.state.value || this.props.value || ''}
                 onChange={this.handleChange}
-                className={this.props.className || ''} 
+                className={this.props.className || ''}
                 placeholder={this.props.placeholder || ''} />
         );
     }
