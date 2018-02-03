@@ -9,16 +9,19 @@ module.exports = {
         "main": './src/main.ts',
         "angular/counters": './src/angular/counters/main.ts',
         "aurelia/counters": './src/aurelia/counters/main.ts',
+        "react/counters": './src/react/counters/main.tsx',
         "angular/gladiators": './src/angular/gladiators/main.ts',
         "aurelia/gladiators": './src/aurelia/gladiators/main.ts',
         "react/gladiators": './src/react/gladiators/main.tsx',
         "angular/sequence": './src/angular/sequence/main.ts',
-        "aurelia/sequence": './src/aurelia/sequence/main.ts',        
+        "aurelia/sequence": './src/aurelia/sequence/main.ts',
+        "react/sequence": './src/react/sequence/main.tsx',
         "angular/todo": './src/angular/todo/main.ts',
         "aurelia/todo": './src/aurelia/todo/main.ts',        
         "react/todo": './src/react/todo/main.tsx',
         "angular/withId": './src/angular/withId/main.ts',
-        "aurelia/withId": './src/aurelia/withId/main.ts'
+        "aurelia/withId": './src/aurelia/withId/main.ts',
+        "react/withId": './src/react/withId/main.tsx'
     },
     devServer: {
         port: 3000,
@@ -57,16 +60,19 @@ plugins: [
     htmlPluginForBundle('main'),
     htmlPluginForBundle('angular/counters'),
     htmlPluginForBundle('aurelia/counters'),
+    htmlPluginForBundle('react/counters'),
     htmlPluginForBundle('angular/gladiators'),
     htmlPluginForBundle('aurelia/gladiators'),
     htmlPluginForBundle('react/gladiators'),
     htmlPluginForBundle('angular/sequence'),
     htmlPluginForBundle('aurelia/sequence'),
+    htmlPluginForBundle('react/sequence'),
     htmlPluginForBundle('angular/todo'),
     htmlPluginForBundle('aurelia/todo'),
     htmlPluginForBundle('react/todo'),
     htmlPluginForBundle('angular/withId'),
-    htmlPluginForBundle('aurelia/withId'),    
+    htmlPluginForBundle('aurelia/withId'),
+    htmlPluginForBundle('react/withId'),
     new ProgressBarPlugin({
         clear: true
     })

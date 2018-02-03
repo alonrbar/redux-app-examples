@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import { GladiatorsAppState } from './state/gladiatorsApp';
+import { AppState } from './state';
 import { App } from './view/App';
 
 //
@@ -12,7 +12,7 @@ import { App } from './view/App';
 //
 
 ReduxApp.options.logLevel = LogLevel.Debug;
-const app = new ReduxApp(new GladiatorsAppState(), devToolsEnhancer(undefined));
+const app = new ReduxApp(new AppState(), devToolsEnhancer(undefined));
 
 //
 // bootstrap react

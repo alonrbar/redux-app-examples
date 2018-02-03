@@ -6,7 +6,7 @@
             <div class="card-body">
                 <h3>the new stuff</h3>
                 <p>{{vm.root.status}}</p>
-                <button (click)="vm.root.fetchImage()">Suprise me!</button>
+                <button (click)="vm.root.fetchImage()">Surprise me!</button>
                 <button (click)="vm.root.doNothing()">I do nothing...</button>
             </div>
             <img *ngIf="vm.root.imageUrl" class="card-img-bottom" [src]="vm.root.imageUrl">

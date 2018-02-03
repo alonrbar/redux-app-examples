@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.6.0 - 2018-02-03
+
+- Full React examples.
+
 ## 1.5.0 - 2017-12-24
 
 - IE support.
