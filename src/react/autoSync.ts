@@ -1,12 +1,8 @@
 import { ComponentType } from 'react';
 import { connect, Omit } from 'react-redux';
-import { ReduxApp, getMethods } from 'redux-app';
+import { Constructor, getMethods, ReduxApp } from 'redux-app';
 
 // tslint:disable:callable-types
-
-export interface Constructor<T> {
-    new(...args: any[]): T;
-}
 
 export type SyncedComponent<TStateProps, TOwnProps extends TStateProps> = ComponentType<Omit<TOwnProps, keyof TStateProps>>;
 
