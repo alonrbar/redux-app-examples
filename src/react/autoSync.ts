@@ -2,7 +2,7 @@ import { ComponentType } from 'react';
 import { connect, Omit } from 'react-redux';
 import { ReduxApp, getMethods } from 'redux-app';
 
-// tslint:disable:ban-types callable-types unified-signatures
+// tslint:disable:callable-types
 
 export interface Constructor<T> {
     new(...args: any[]): T;
@@ -10,7 +10,7 @@ export interface Constructor<T> {
 
 export type SyncedComponent<TStateProps, TOwnProps extends TStateProps> = ComponentType<Omit<TOwnProps, keyof TStateProps>>;
 
-export interface AutoSyncEnhancer<TStateProps> {
+export interface AutoSyncEnhancer<TStateProps> {    
     <TOwnProps extends TStateProps>(component: ComponentType<TOwnProps>): SyncedComponent<TStateProps, TOwnProps>;
 }
 
