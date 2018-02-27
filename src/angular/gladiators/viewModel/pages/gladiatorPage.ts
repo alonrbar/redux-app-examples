@@ -1,10 +1,9 @@
-import { component, connect, sequence, withId } from 'redux-app';
+import { action, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
 
-@component
 export class GladiatorPage {
 
     //
@@ -20,13 +19,13 @@ export class GladiatorPage {
     // private members
     //
 
-    @connect
+    // @connect
     private selectedGladiator: SelectedGladiator;
 
-    @connect
+    // @connect
     private list: GladiatorsList;
 
-    @connect
+    // @connect
     private router: Router;
 
     //
@@ -79,6 +78,7 @@ export class GladiatorPage {
     // actions
     //
 
+    @action
     public toggleStatus(on: boolean) {
         this.showStatus = on;
     }

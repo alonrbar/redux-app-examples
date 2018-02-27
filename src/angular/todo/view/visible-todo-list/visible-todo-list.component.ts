@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { connect } from 'redux-app';
 import { VisibleTodoList } from '../../viewModel';
 
 @Component({
@@ -8,6 +7,6 @@ import { VisibleTodoList } from '../../viewModel';
 })
 export class VisibleTodoListComponent {
 
-    @connect
+    // @connect
     public vm: VisibleTodoList;
 }

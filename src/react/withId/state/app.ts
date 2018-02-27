@@ -1,7 +1,6 @@
-import { component, withId } from 'redux-app';
+import { withId } from 'redux-app';
 import { CounterState } from './counter';
 
-@component
 export class AppState {
     public title = "counters with identity";
     public subtitle = "using the withId decorator, a \"mini ORM\" feature";

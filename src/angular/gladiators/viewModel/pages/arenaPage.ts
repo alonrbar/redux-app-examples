@@ -1,10 +1,9 @@
-import { component, connect, noDispatch, sequence } from 'redux-app';
+import { action, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { randomInt } from '../../utils';
 import { GladiatorsList } from '../partials';
 import { Route, Router } from '../router';
 
-@component
 export class ArenaPage {
 
     //
@@ -22,10 +21,10 @@ export class ArenaPage {
     // private dependencies
     //
 
-    @connect
+    // @connect
     private list: GladiatorsList;
 
-    @connect
+    // @connect
     private router: Router;
 
     //
@@ -110,10 +109,12 @@ export class ArenaPage {
     // actions
     //
 
+    @action
     private setStatus(newStatus: string): void {
         this.status = newStatus;
     }
 
+    @action
     private updateFighter(index: number, gladiator: Gladiator): void {
         if (index === 1) {
             this.gladiator1 = gladiator;
@@ -124,6 +125,7 @@ export class ArenaPage {
         }
     }
 
+    @action
     private setFighters(gladiator1: Gladiator, gladiator2: Gladiator): void {
         this.gladiator1 = gladiator1;
         this.lifeMeter1 = 100;
@@ -131,6 +133,7 @@ export class ArenaPage {
         this.lifeMeter2 = 100;
     }
 
+    @action
     private strike(target: number, force: number): void {
         if (target === 1) {
             this.lifeMeter1 -= force;
@@ -149,7 +152,6 @@ export class ArenaPage {
     // utils
     //
 
-    @noDispatch
     private randomFighterIndex(): number {
         return randomInt(0, this.list.items.length - 1);
     }

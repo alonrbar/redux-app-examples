@@ -8,7 +8,8 @@ import { AppState } from './state';
 import { App } from './view/App';
 
 ReduxApp.options.logLevel = LogLevel.Debug;
-const app = ReduxApp.createApp(new AppState(), devToolsEnhancer(undefined));
+const appCreator = new AppState();
+const app = ReduxApp.createApp(appCreator, devToolsEnhancer(undefined));
 
 ReactDOM.render(
     <Provider store={app.store}>

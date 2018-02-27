@@ -11,9 +11,9 @@ export interface AutoSyncEnhancer<TStateProps> {
 }
 
 export function autoSync<T>(stateType: Constructor<T>): AutoSyncEnhancer<T> {
-    return connect(() => {
+    return connect<T>(() => {
         const comp = ReduxApp.getComponent(stateType);
         const compMethods = getMethods(comp, true);
-        return Object.assign({}, comp, compMethods as any);
+        return Object.assign({}, comp, compMethods);
     });
 }

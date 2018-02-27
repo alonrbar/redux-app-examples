@@ -1,4 +1,3 @@
-import { connect } from 'redux-app';
 import { ArenaPageState } from '../state';
 import * as React from 'react';
 import { autoSync } from '../../autoSync';

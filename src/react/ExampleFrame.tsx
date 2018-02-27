@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'redux-app';
 
 export interface ExampleFrameProps {
     title: string;

@@ -1,10 +1,9 @@
-import { component, computed, connect, sequence, withId } from 'redux-app';
+import { action, computed, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
 
-@component
 export class GladiatorPageState {
 
     //
@@ -25,14 +24,11 @@ export class GladiatorPageState {
     // private members
     //
 
-    @connect
-    private selectedGladiator: SelectedGladiator;
-
-    @connect
-    private list: GladiatorsList;
-
-    @connect
-    private router: Router;
+    constructor(
+        private readonly selectedGladiator: SelectedGladiator,
+        private readonly list: GladiatorsList,
+        private readonly router: Router) {
+    }
 
     //
     // methods
@@ -40,7 +36,7 @@ export class GladiatorPageState {
 
     @sequence
     public goBack(): void {
-       this.router.navigateTo(Route.MainPage);
+        this.router.navigateTo(Route.MainPage);
     }
 
     @sequence
@@ -72,7 +68,7 @@ export class GladiatorPageState {
         this.selectedGladiator.setValue(this._tempGladiator.value);
         this.toggleStatus(true);
         setTimeout(() => this.toggleStatus(false), 1500);
-    }    
+    }
 
     @sequence
     public delete(): void {
@@ -84,6 +80,7 @@ export class GladiatorPageState {
     // actions
     //
 
+    @action
     public toggleStatus(on: boolean) {
         this.showStatus = on;
     }

@@ -1,9 +1,8 @@
-import { component, connect, computed, noDispatch } from 'redux-app';
+import { action, computed } from 'redux-app';
 import { TodoListState } from './todoList';
 import { VisibilityFilterValue, VisibilityFilter } from './visibilityFilter';
 import { TodoState } from './todo';
 
-@component
 export class VisibleTodoListState {
 
     @computed
@@ -20,13 +19,12 @@ export class VisibleTodoListState {
         }
     }
 
-    @connect
-    private todoList: TodoListState = null;
+    constructor(
+        private readonly todoList: TodoListState,
+        private readonly filter: VisibilityFilterValue) {
+    }
 
-    @connect
-    private filter: VisibilityFilterValue = null;
-
-    @noDispatch
+    @action
     public toggleTodo(id: number): void {
         this.todoList.toggleTodo(id);
     }

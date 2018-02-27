@@ -1,16 +1,15 @@
-import { component, computed, connect, sequence } from 'redux-app';
+import { action, computed, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
 
-@component
 export class MainPage {
 
     //
     // public props
     //    
 
-    @connect
+    // @connect
     public gladiatorsList: GladiatorsList;
 
     @computed
@@ -24,10 +23,10 @@ export class MainPage {
     // private props
     //
 
-    @connect
+    // @connect
     private selectedGladiator: SelectedGladiator;
 
-    @connect
+    // @connect
     private router: Router;
 
     //

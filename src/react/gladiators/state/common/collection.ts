@@ -1,10 +1,9 @@
-import { component, sequence } from 'redux-app';
+import { action, sequence } from 'redux-app';
 import { IIdentifiable } from './iIdentifiable';
 
 /**
  * Encapsulates storage and modification of a collection of items.
  */
-@component
 export class Collection<T extends IIdentifiable> {
 
     public items: T[];
@@ -13,10 +12,12 @@ export class Collection<T extends IIdentifiable> {
         this.items = items || [];
     }
 
+    @action
     public add(item: T | T[]): void {
         this.items = this.items.concat(item);
     }
 
+    @action
     public update(item: T): void {
         this.items = this.items.map(it => {
             if (it.id === item.id) {
@@ -36,6 +37,7 @@ export class Collection<T extends IIdentifiable> {
         }
     }
 
+    @action
     public remove(item: T): void {
         this.items = this.items.filter(it => it.id !== item.id);
     }

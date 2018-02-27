@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'redux-app';
 import { autoSync } from '../../autoSync';
 import { AppState, VisibilityFilter, VisibilityFilterValue } from '../state';
 import Link from './Link';

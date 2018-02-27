@@ -1,4 +1,4 @@
-import { component } from 'redux-app';
+import { action } from 'redux-app';
 
 export enum Route {
     MainPage,
@@ -6,10 +6,10 @@ export enum Route {
     ArenaPage
 }
 
-@component
 export class Router {
     public currentRoute = Route.MainPage;
 
+    @action
     public navigateTo(route: Route): void {
         this.currentRoute = route;
     }

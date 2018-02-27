@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { connect } from 'redux-app';
 import { ArenaPage } from '../../viewModel';
 
 @Component({
@@ -8,7 +7,7 @@ import { ArenaPage } from '../../viewModel';
 })
 export class ArenaPageComponent {
 
-  @connect
+  // @connect
   public vm: ArenaPage;
 
   constructor() {

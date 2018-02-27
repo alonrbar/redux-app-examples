@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { connect } from 'redux-app';
 import { GladiatorPage } from '../../viewModel';
 var debounce = require('lodash.debounce');
 
@@ -13,7 +12,7 @@ export class GladiatorPageComponent {
     this.vm.setName(name);
   }, 300);
 
-  @connect
+  // @connect
   public vm: GladiatorPage;
 
   constructor() {

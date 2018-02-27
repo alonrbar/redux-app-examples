@@ -1,10 +1,10 @@
-import { component } from 'redux-app';
+import { action } from 'redux-app';
 
-@component
 export class Counter {
 
     public value = 0;
 
+    @action
     public increment(): void {
         this.value = this.value + 1;
     }

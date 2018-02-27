@@ -1,10 +1,9 @@
-import { component, connect, noDispatch, sequence } from 'redux-app';
+import { action, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { randomInt } from '../../utils';
 import { GladiatorsList } from '../partials';
 import { Route, Router } from '../router';
 
-@component
 export class ArenaPageState {
 
     //
@@ -22,11 +21,10 @@ export class ArenaPageState {
     // private dependencies
     //
 
-    @connect
-    private list: GladiatorsList;
-
-    @connect
-    private router: Router;
+    constructor(
+        private readonly list: GladiatorsList,
+        private readonly router: Router) {
+    }
 
     //
     // sequences
@@ -93,7 +91,7 @@ export class ArenaPageState {
                 // the fight is over
                 const striker = (strikerIndex === 1 ? this.gladiator1 : this.gladiator2);
                 const updatedStriker = Object.assign({}, striker, { wins: striker.wins + 1 });
-                
+
                 this.updateFighter(strikerIndex, updatedStriker);
                 this.list.update(updatedStriker);
 
@@ -110,10 +108,12 @@ export class ArenaPageState {
     // actions
     //
 
+    @action
     private setStatus(newStatus: string): void {
         this.status = newStatus;
     }
 
+    @action
     private updateFighter(index: number, gladiator: Gladiator): void {
         if (index === 1) {
             this.gladiator1 = gladiator;
@@ -124,6 +124,7 @@ export class ArenaPageState {
         }
     }
 
+    @action
     private setFighters(gladiator1: Gladiator, gladiator2: Gladiator): void {
         this.gladiator1 = gladiator1;
         this.lifeMeter1 = 100;
@@ -131,6 +132,7 @@ export class ArenaPageState {
         this.lifeMeter2 = 100;
     }
 
+    @action
     private strike(target: number, force: number): void {
         if (target === 1) {
             this.lifeMeter1 -= force;
@@ -149,7 +151,6 @@ export class ArenaPageState {
     // utils
     //
 
-    @noDispatch
     private randomFighterIndex(): number {
         return randomInt(0, this.list.items.length - 1);
     }

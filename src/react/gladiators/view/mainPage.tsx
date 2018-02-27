@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'redux-app';
 import { autoSync } from '../../autoSync';
 import { MainPageState } from '../state';
 import { GladiatorThumbnail } from './GladiatorThumbnail';

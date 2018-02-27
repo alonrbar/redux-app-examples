@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { connect } from 'redux-app';
 import { MainPage } from '../../viewModel';
 import './mainPage.component.css';
 
@@ -9,6 +8,6 @@ import './mainPage.component.css';
 })
 export class MainPageComponent {
 
-  @connect
+  // @connect
   public vm: MainPage;  
 }

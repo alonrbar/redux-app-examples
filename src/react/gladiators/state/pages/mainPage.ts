@@ -1,17 +1,13 @@
-import { component, computed, connect, sequence } from 'redux-app';
+import { action, computed, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
 
-@component
 export class MainPageState {
 
     //
-    // public props
+    // properties
     //    
-
-    @connect
-    public gladiatorsList: GladiatorsList;
 
     @computed
     public get topGladiators(): Gladiator[] {
@@ -20,15 +16,11 @@ export class MainPageState {
         return top.slice(0, 3);
     }
 
-    //
-    // private props
-    //
-
-    @connect
-    private selectedGladiator: SelectedGladiator;
-
-    @connect
-    private router: Router;
+    constructor(
+        public readonly gladiatorsList: GladiatorsList,
+        private readonly selectedGladiator: SelectedGladiator,
+        private readonly router: Router) {
+    }
 
     //
     // methods

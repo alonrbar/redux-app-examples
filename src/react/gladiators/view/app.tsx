@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { connect, LogLevel, ReduxApp } from 'redux-app';
+import { LogLevel, ReduxApp } from 'redux-app';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import { autoSync } from '../../autoSync';
 import { ExampleFrame } from '../../ExampleFrame';

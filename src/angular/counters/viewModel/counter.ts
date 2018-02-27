@@ -1,6 +1,5 @@
-import { component } from 'redux-app';
+import { action } from 'redux-app';
 
-@component
 export class Counter {
 
     private static countersId = 1;
@@ -8,6 +7,7 @@ export class Counter {
     public id = Counter.countersId++;
     public value = 0;
 
+    @action
     public increment(counterId: number): void {
 
         if (counterId !== this.id)

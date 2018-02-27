@@ -1,9 +1,8 @@
-import { component } from "redux-app";
+import { action } from "redux-app";
 
 /**
  * Encapsulates storage and modification of a single value.
  */
-@component
 export class Value<T> {
     public value: T;
 
@@ -11,10 +10,12 @@ export class Value<T> {
         this.value = initial;
     }
 
+    @action
     public setValue(newValue: T): void {
         this.value = newValue;
     }
 
+    @action
     public updateValue(newValue: Partial<T>): void {
         this.value = Object.assign({}, this.value, newValue);
     }
