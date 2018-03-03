@@ -1,4 +1,4 @@
-import { action, sequence } from 'redux-app';
+import { action, ignoreState, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { randomInt } from '../../utils';
 import { GladiatorsList } from '../partials';
@@ -21,11 +21,13 @@ export class ArenaPage {
     // private dependencies
     //
 
-    // @connect
-    private list: GladiatorsList;
+    private readonly list: GladiatorsList;
+    @ignoreState private readonly router: Router;
 
-    // @connect
-    private router: Router;
+    constructor(list: GladiatorsList, router: Router) {
+        this.list = list;
+        this.router = router;
+    }
 
     //
     // sequences
@@ -92,7 +94,7 @@ export class ArenaPage {
                 // the fight is over
                 const striker = (strikerIndex === 1 ? this.gladiator1 : this.gladiator2);
                 const updatedStriker = Object.assign({}, striker, { wins: striker.wins + 1 });
-                
+
                 this.updateFighter(strikerIndex, updatedStriker);
                 this.list.update(updatedStriker);
 

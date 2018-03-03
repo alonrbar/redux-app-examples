@@ -1,4 +1,4 @@
-import { action, sequence, withId } from 'redux-app';
+import { action, ignoreState, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorsList, SelectedGladiator } from '../partials';
@@ -19,14 +19,15 @@ export class GladiatorPage {
     // private members
     //
 
-    // @connect
     private selectedGladiator: SelectedGladiator;
-
-    // @connect
     private list: GladiatorsList;
+    @ignoreState private router: Router;
 
-    // @connect
-    private router: Router;
+    constructor(selectedGladiator: SelectedGladiator, list: GladiatorsList, router: Router) {
+        this.selectedGladiator = selectedGladiator;
+        this.list = list;
+        this.router = router;
+    }
 
     //
     // methods

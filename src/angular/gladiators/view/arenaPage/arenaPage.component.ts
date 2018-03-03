@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReduxApp } from 'redux-app';
 import { ArenaPage } from '../../viewModel';
 
 @Component({
@@ -7,8 +8,7 @@ import { ArenaPage } from '../../viewModel';
 })
 export class ArenaPageComponent {
 
-  // @connect
-  public vm: ArenaPage;
+  public vm = ReduxApp.getComponent(ArenaPage);
 
   constructor() {
     this.vm.prepareForFight();

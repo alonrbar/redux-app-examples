@@ -10,7 +10,12 @@ export class App {
     public todoList = new TodoList();
     public visibilityFilter = new VisibilityFilterValue(VisibilityFilter.ShowAll);
 
-    public partials = {
-        visibleTodos: new VisibleTodoList()
-    };
+    public visibleTodos: VisibleTodoList;
+
+    constructor() {
+        // using poor man's dependency injection here.
+        // about DI: https://en.wikipedia.org/wiki/Dependency_injection
+        // js DI containers: https://www.npmjs.com/search?q=dependency+injection
+        this.visibleTodos = new VisibleTodoList(this.todoList, this.visibilityFilter);
+    }
 }

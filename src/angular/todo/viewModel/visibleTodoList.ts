@@ -1,4 +1,4 @@
-import { action } from 'redux-app';
+import { sequence } from 'redux-app';
 import { TodoList } from './todoList';
 import { VisibilityFilterValue, VisibilityFilter } from './visibilityFilter';
 import { Todo } from './todo';
@@ -18,12 +18,13 @@ export class VisibleTodoList {
         }
     }
 
-    // @connect
-    private todoList: TodoList = null;
+    constructor(
+        private readonly todoList: TodoList,
+        private readonly filter: VisibilityFilterValue
+    ) {
+    }
 
-    // @connect
-    private filter: VisibilityFilterValue = null;
-
+    @sequence
     public toggleTodo(id: number): void {
         this.todoList.toggleTodo(id);
     }

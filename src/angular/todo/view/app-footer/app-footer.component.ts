@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReduxApp } from 'redux-app';
 import { VisibilityFilterValue } from '../../viewModel';
 
 @Component({
@@ -7,6 +8,5 @@ import { VisibilityFilterValue } from '../../viewModel';
 })
 export class AppFooterComponent {
 
-    // @connect
-    public filter: VisibilityFilterValue;
+    public filter = ReduxApp.getComponent(VisibilityFilterValue);
 }

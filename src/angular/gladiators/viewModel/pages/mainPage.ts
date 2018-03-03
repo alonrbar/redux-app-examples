@@ -1,4 +1,4 @@
-import { action, sequence } from 'redux-app';
+import { action, ignoreState, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
@@ -9,7 +9,6 @@ export class MainPage {
     // public props
     //    
 
-    // @connect
     public gladiatorsList: GladiatorsList;
 
     public get topGladiators(): Gladiator[] {
@@ -22,11 +21,14 @@ export class MainPage {
     // private props
     //
 
-    // @connect
     private selectedGladiator: SelectedGladiator;
+    @ignoreState private router: Router;
 
-    // @connect
-    private router: Router;
+    constructor(list: GladiatorsList, selectedGladiator: SelectedGladiator, router: Router) {
+        this.gladiatorsList = list;
+        this.selectedGladiator = selectedGladiator;
+        this.router = router;
+    }
 
     //
     // methods
