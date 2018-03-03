@@ -13,7 +13,7 @@ export class ExampleFrame extends React.Component<ExampleFrameProps> {
                 <div className="card-body">
 
                     {/* FRAMEWORK ICON */}
-                    <img src={"/res/600px-React-icon.png"} className="float-right" width="30" height="30" title="Using React" alt="Using React" />
+                    <img src={"/res/react-icon-small.png"} className="float-right" width="30" height="30" title="Using React" alt="Using React" />
 
                     {/* TITLE AND STUFF */}
                     <h2 className="card-title mb-3">redux-app-examples</h2>
