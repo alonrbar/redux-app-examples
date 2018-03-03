@@ -1,11 +1,10 @@
-import { action, computed } from 'redux-app';
+import { action } from 'redux-app';
 import { TodoList } from './todoList';
 import { VisibilityFilterValue, VisibilityFilter } from './visibilityFilter';
 import { Todo } from './todo';
 
 export class VisibleTodoList {
 
-    @computed
     public get visibleTodos(): Todo[] {
         switch (this.filter.value) {
             case VisibilityFilter.ShowAll:

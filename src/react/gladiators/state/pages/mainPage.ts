@@ -1,4 +1,4 @@
-import { action, computed, sequence } from 'redux-app';
+import { action, sequence } from 'redux-app';
 import { Gladiator } from '../../model';
 import { GladiatorsList, SelectedGladiator } from '../partials';
 import { Route, Router } from '../router';
@@ -9,7 +9,6 @@ export class MainPageState {
     // properties
     //    
 
-    @computed
     public get topGladiators(): Gladiator[] {
         var top = this.gladiatorsList.items.slice();
         top.sort((a, b) => b.wins - a.wins);

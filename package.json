@@ -1,6 +1,6 @@
 {
   "name": "redux-app-examples",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "Examples of redux-app with Angular and React.",
   "keywords": [
     "redux-app",
@@ -36,7 +36,7 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-redux": "5.0.6",
-    "redux-app": "1.11.0",
+    "redux-app": "2.0.0",
     "redux-devtools-extension": "2.13.2",
     "rxjs": "5.5.5",
     "zone.js": "0.8.18"

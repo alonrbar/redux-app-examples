@@ -1,4 +1,4 @@
-import { action, computed, sequence, withId } from 'redux-app';
+import { action, sequence, withId } from 'redux-app';
 import { Banner, Gladiator } from '../../model';
 import { Value } from '../common';
 import { GladiatorsList, SelectedGladiator } from '../partials';
@@ -12,7 +12,6 @@ export class GladiatorPageState {
 
     public showStatus = false;
 
-    @computed
     public get tempGladiator() {
         return this._tempGladiator.value;
     }

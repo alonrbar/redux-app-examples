@@ -1,11 +1,10 @@
-import { action, computed } from 'redux-app';
+import { action, sequence } from 'redux-app';
 import { TodoListState } from './todoList';
 import { VisibilityFilterValue, VisibilityFilter } from './visibilityFilter';
 import { TodoState } from './todo';
 
 export class VisibleTodoListState {
 
-    @computed
     public get visibleTodos(): TodoState[] {
         switch (this.filter.value) {
             case VisibilityFilter.ShowAll:
@@ -24,7 +23,7 @@ export class VisibleTodoListState {
         private readonly filter: VisibilityFilterValue) {
     }
 
-    @action
+    @sequence
     public toggleTodo(id: number): void {
         this.todoList.toggleTodo(id);
     }

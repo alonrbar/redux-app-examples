@@ -17,5 +17,5 @@ const App: React.SFC<AppState> = (props) => (
     </ExampleFrame>
 );
 
-const connected = autoSync(AppState)(App);
+const connected = autoSync(AppState, false)(App);
 export { connected as App };

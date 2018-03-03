@@ -6,15 +6,15 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 module.exports = {
     entry: {
         "main": './src/main.ts',
-        // "angular/counters": './src/angular/counters/main.ts',
+        "angular/counters": './src/angular/counters/main.ts',
         "react/counters": './src/react/counters/main.tsx',
-        // "angular/gladiators": './src/angular/gladiators/main.ts',
+        "angular/gladiators": './src/angular/gladiators/main.ts',
         "react/gladiators": './src/react/gladiators/main.tsx',
-        // "angular/sequence": './src/angular/sequence/main.ts',
+        "angular/sequence": './src/angular/sequence/main.ts',
         "react/sequence": './src/react/sequence/main.tsx',
-        // "angular/todo": './src/angular/todo/main.ts',
+        "angular/todo": './src/angular/todo/main.ts',
         "react/todo": './src/react/todo/main.tsx',
-        // "angular/withId": './src/angular/withId/main.ts',
+        "angular/withId": './src/angular/withId/main.ts',
         "react/withId": './src/react/withId/main.tsx'
     },
     devServer: {
@@ -51,15 +51,15 @@ plugins: [
         path.resolve('./src')
     ),
     htmlPluginForBundle('main'),
-    // htmlPluginForBundle('angular/counters'),
+    htmlPluginForBundle('angular/counters'),
     htmlPluginForBundle('react/counters'),
-    // htmlPluginForBundle('angular/gladiators'),
+    htmlPluginForBundle('angular/gladiators'),
     htmlPluginForBundle('react/gladiators'),
-    // htmlPluginForBundle('angular/sequence'),
+    htmlPluginForBundle('angular/sequence'),
     htmlPluginForBundle('react/sequence'),
-    // htmlPluginForBundle('angular/todo'),
+    htmlPluginForBundle('angular/todo'),
     htmlPluginForBundle('react/todo'),
-    // htmlPluginForBundle('angular/withId'),
+    htmlPluginForBundle('angular/withId'),
     htmlPluginForBundle('react/withId'),
     new ProgressBarPlugin({
         clear: true
